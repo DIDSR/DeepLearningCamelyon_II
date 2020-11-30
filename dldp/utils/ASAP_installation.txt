@@ -1,0 +1,46 @@
+# First, install the dependent packages for ASAP
+
+sudo apt-get install python3-tk
+sudo apt-get install libpython3.5-dev
+# libpython3.6-dev is also OK.
+# sudo apt-get install libpython3.6-dev
+pip3 install matplotlib numpy
+
+
+# Second, download ASAP from the website: https://github.com/computationalpathologygroup/ASAP/releases
+
+# install it by the following command:
+
+sudo dpkg -i ASAP-1.9-python36-Linux.deb
+
+
+# to find where it was installed, use the command:
+
+dpkg -L asap
+
+#Last, put it in the PYTHONPATH:
+
+PYTHONPATH="/opt/ASAP/bin":"${PYTHONPATH}"
+ export PYTHONPATH
+
+# PYTHONPATH can be empty if your restart the computer.
+# A way to fix it is to add the two lines right after "PATH" to the file of "your-python-enironment-folder/bin/activate"
+PYTHONPATH=/opt/ASAP/bin":$PYTHONPATH
+export PYTHONPATH
+
+
+# Now we can test it:
+
+>>>import matplotlib.pyplot as plt
+>>>import multiresolutionimageinterface as mir
+>>>reader = mir.MultiResolutionImageReader()
+>>>mr_image = reader.open('/your-CAMELYON16-training-tumor-folder/tumor_036.tif')
+>>>dims = mr_image.getLevelDimensions(6)  #number 6 here is the level of image. 
+>>>tile = mr_image.getUCharPatch(0, 0, dims[0], dims[1], 6)
+>>>plt.imshow(tile)
+>>>plt.show()
+>>>tile =mr_image.getUCharPatch(37000, 90000, 1024, 1024, 0)
+>>>plt.imshow(tile)
+>>>plt.show()
+
+

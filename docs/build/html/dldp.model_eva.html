@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dldp.model_eva package &mdash; Deep Learning for Digital Pathology 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="dldp.model_eva.froc package" href="dldp.model_eva.froc.html" />
+    <link rel="prev" title="dldp.image_process package" href="dldp.image_process.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Deep Learning for Digital Pathology
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="dldp.html">dldp package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="dldp.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dldp.cnn_train.html">dldp.cnn_train package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.heatmap_pred.html">dldp.heatmap_pred package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.image_process.html">dldp.image_process package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">dldp.model_eva package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.model_eva">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.patch_extract.html">dldp.patch_extract package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.utils.html">dldp.utils package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.wsi_visu.html">dldp.wsi_visu package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dldp.html#module-dldp">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Deep Learning for Digital Pathology</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="dldp.html">dldp package</a> &raquo;</li>
+        
+      <li>dldp.model_eva package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/dldp.model_eva.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dldp-model-eva-package">
+<h1>dldp.model_eva package<a class="headerlink" href="#dldp-model-eva-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dldp.model_eva.froc.html">dldp.model_eva.froc package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dldp.model_eva.froc.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dldp.model_eva.froc.html#module-dldp.model_eva.froc.FROC_Calcu_with_home_made_mask">dldp.model_eva.froc.FROC_Calcu_with_home_made_mask module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dldp.model_eva.froc.html#description-by-weizhe-li">Description by Weizhe Li:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dldp.model_eva.froc.html#module-dldp.model_eva.froc.FROC_csv_0604">dldp.model_eva.froc.FROC_csv_0604 module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dldp.model_eva.froc.html#title-lesion-based-prediction">Title: lesion based prediction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dldp.model_eva.froc.html#description">Description:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dldp.model_eva.froc.html#note">Note:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dldp.model_eva.froc.html#module-dldp.model_eva.froc">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dldp.model_eva.roc.html">dldp.model_eva.roc package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dldp.model_eva.roc.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dldp.model_eva.roc.html#module-dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch">dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dldp.model_eva.roc.html#parameter-extraction-for-random-forest-batch">Parameter_Extraction_For_Random Forest_Batch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dldp.model_eva.roc.html#purpose">Purpose:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dldp.model_eva.roc.html#description">Description:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dldp.model_eva.roc.html#module-dldp.model_eva.roc.RF_training_batch">dldp.model_eva.roc.RF_training_batch module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dldp.model_eva.roc.html#random-forest-model-training-batch">Random Forest Model Training_Batch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.model_eva.roc.html#id1">Purpose:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.model_eva.roc.html#id2">Description:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dldp.model_eva.roc.html#module-dldp.model_eva.roc">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="module-dldp.model_eva">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dldp.model_eva" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dldp.model_eva.froc.html" class="btn btn-neutral float-right" title="dldp.model_eva.froc package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dldp.image_process.html" class="btn btn-neutral float-left" title="dldp.image_process package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Weizhe Li, Weijie Chen
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

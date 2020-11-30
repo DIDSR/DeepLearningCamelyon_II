@@ -1,0 +1,62 @@
+dldp.heatmap package
+====================
+
+Submodules
+----------
+
+dldp.heatmap.Heat\_Map\_Build0319\_betsy module
+-----------------------------------------------
+
+.. automodule:: dldp.heatmap.Heat_Map_Build0319_betsy
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dldp.heatmap.Pred\_Slide\_Window\_For\_Heatmap module
+-----------------------------------------------------
+
+.. automodule:: dldp.heatmap.Pred_Slide_Window_For_Heatmap
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dldp.heatmap.Pred\_Slide\_Window\_For\_Heatmap\_main module
+-----------------------------------------------------------
+
+.. automodule:: dldp.heatmap.Pred_Slide_Window_For_Heatmap_main
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dldp.heatmap.copy\_makeup\_files module
+---------------------------------------
+
+.. automodule:: dldp.heatmap.copy_makeup_files
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dldp.heatmap.task\_id\_makeup module
+------------------------------------
+
+.. automodule:: dldp.heatmap.task_id_makeup
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dldp.heatmap.task\_id\_remained module
+--------------------------------------
+
+.. automodule:: dldp.heatmap.task_id_remained
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: dldp.heatmap
+   :members:
+   :undoc-members:
+   :show-inheritance:

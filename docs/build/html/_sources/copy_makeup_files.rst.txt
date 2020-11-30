@@ -1,0 +1,7 @@
+copy\_makeup\_files module
+==========================
+
+.. automodule:: copy_makeup_files
+   :members:
+   :undoc-members:
+   :show-inheritance:

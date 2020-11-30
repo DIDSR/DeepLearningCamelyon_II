@@ -1,0 +1,814 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dldp.patch_extract package &mdash; Deep Learning for Digital Pathology 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="dldp.utils package" href="dldp.utils.html" />
+    <link rel="prev" title="dldp.model_eva.roc package" href="dldp.model_eva.roc.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Deep Learning for Digital Pathology
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="dldp.html">dldp package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="dldp.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dldp.cnn_train.html">dldp.cnn_train package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.heatmap_pred.html">dldp.heatmap_pred package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.image_process.html">dldp.image_process package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.model_eva.html">dldp.model_eva package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">dldp.patch_extract package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.patch_extract.Extract_Normal_Patches_From_Normal_Slides">dldp.patch_extract.Extract_Normal_Patches_From_Normal_Slides module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.patch_extract.Extract_Normal_Patches_From_Normal_slides_HPC">dldp.patch_extract.Extract_Normal_Patches_From_Normal_slides_HPC module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.patch_extract.Extract_Normal_and_Tumor_Patches_From_Tumor_Slides">dldp.patch_extract.Extract_Normal_and_Tumor_Patches_From_Tumor_Slides module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.patch_extract.Patch_Extractor">dldp.patch_extract.Patch_Extractor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.patch_extract.patch_extract_class">dldp.patch_extract.patch_extract_class module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.patch_extract">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.utils.html">dldp.utils package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.wsi_visu.html">dldp.wsi_visu package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dldp.html#module-dldp">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Deep Learning for Digital Pathology</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="dldp.html">dldp package</a> &raquo;</li>
+        
+      <li>dldp.patch_extract package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/dldp.patch_extract.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dldp-patch-extract-package">
+<h1>dldp.patch_extract package<a class="headerlink" href="#dldp-patch-extract-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dldp.patch_extract.Extract_Normal_Patches_From_Normal_Slides">
+<span id="dldp-patch-extract-extract-normal-patches-from-normal-slides-module"></span><h2>dldp.patch_extract.Extract_Normal_Patches_From_Normal_Slides module<a class="headerlink" href="#module-dldp.patch_extract.Extract_Normal_Patches_From_Normal_Slides" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="title-extract-normal-patches-from-normal-slides">
+<h3>Title: Extract_Normal_Patches_From_Normal_Slides<a class="headerlink" href="#title-extract-normal-patches-from-normal-slides" title="Permalink to this headline">¶</a></h3>
+<p>Created: 10-31-2019
+Python-Version: 3.5
+Description:
+————
+This module is used to generate extract normal image patches from
+normal WSI images.</p>
+<div class="section" id="request">
+<h4>Request:<a class="headerlink" href="#request" title="Permalink to this headline">¶</a></h4>
+<p>This module requests the library module: patch_extractor</p>
+</div>
+</div>
+</div>
+<div class="section" id="module-dldp.patch_extract.Extract_Normal_Patches_From_Normal_slides_HPC">
+<span id="dldp-patch-extract-extract-normal-patches-from-normal-slides-hpc-module"></span><h2>dldp.patch_extract.Extract_Normal_Patches_From_Normal_slides_HPC module<a class="headerlink" href="#module-dldp.patch_extract.Extract_Normal_Patches_From_Normal_slides_HPC" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="title-extract-normal-patches-from-normal-slides-hpc">
+<h3>Title: Extract_Normal_Patches_From_Normal_Slides_HPC<a class="headerlink" href="#title-extract-normal-patches-from-normal-slides-hpc" title="Permalink to this headline">¶</a></h3>
+<p>Created: 10-31-2019
+Python-Version: 3.5</p>
+<div class="section" id="description">
+<h4>Description:<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h4>
+<p>This module is used to generate extract normal image patches from
+normal WSI images on HPC (cluster) only. Each node will get one WSI
+image done.</p>
+</div>
+<div class="section" id="id1">
+<h4>Request:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>This module requests the library module: patch_extractor.
+This module also request a shell script to allocate the tasks.</p>
+</div>
+</div>
+</div>
+<div class="section" id="module-dldp.patch_extract.Extract_Normal_and_Tumor_Patches_From_Tumor_Slides">
+<span id="dldp-patch-extract-extract-normal-and-tumor-patches-from-tumor-slides-module"></span><h2>dldp.patch_extract.Extract_Normal_and_Tumor_Patches_From_Tumor_Slides module<a class="headerlink" href="#module-dldp.patch_extract.Extract_Normal_and_Tumor_Patches_From_Tumor_Slides" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="title-extract-normal-and-tumor-patches-from-tumor-slides">
+<h3>Title: Extract_Normal_and_Tumor_Patches_From_Tumor_Slides<a class="headerlink" href="#title-extract-normal-and-tumor-patches-from-tumor-slides" title="Permalink to this headline">¶</a></h3>
+<p>Created: 10-31-2019
+Python-Version: 3.5</p>
+<div class="section" id="id2">
+<h4>Description:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>This module is used to generate extract normal and tumor image patches
+from tumor WSI images.</p>
+</div>
+<div class="section" id="id3">
+<h4>Request:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>This module requests the library module: patch_extractor</p>
+</div>
+<div class="section" id="note">
+<h4>Note:<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h4>
+<p>Some tumor slides can’t have 1000 tumor slides to be extracted because
+the tumor region is too small. The program needs to be stop at these WSIs
+and start mannually from next WSI.</p>
+</div>
+</div>
+</div>
+<div class="section" id="module-dldp.patch_extract.Patch_Extractor">
+<span id="dldp-patch-extract-patch-extractor-module"></span><h2>dldp.patch_extract.Patch_Extractor module<a class="headerlink" href="#module-dldp.patch_extract.Patch_Extractor" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="title-patch-extractor">
+<h3>Title: patch extractor<a class="headerlink" href="#title-patch-extractor" title="Permalink to this headline">¶</a></h3>
+<p>Created: 10-31-2019
+Python-Version: 3.5</p>
+</div>
+<div class="section" id="id4">
+<h3>Description:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>This libray module provides functions for patch extraction.</p>
+<dl class="function">
+<dt id="dldp.patch_extract.Patch_Extractor.bbox_generation_tissue">
+<code class="sig-prename descclassname">dldp.patch_extract.Patch_Extractor.</code><code class="sig-name descname">bbox_generation_tissue</code><span class="sig-paren">(</span><em class="sig-param">slide</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.Patch_Extractor.bbox_generation_tissue" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate a bounding box for tissue region in a WSI image</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>slide</strong> (<em>object</em>) – the initialized slide oject from openslide</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bbox_tissue, the coordinates for the four corners of
+the tissue region.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.patch_extract.Patch_Extractor.bbox_generation_tumor">
+<code class="sig-prename descclassname">dldp.patch_extract.Patch_Extractor.</code><code class="sig-name descname">bbox_generation_tumor</code><span class="sig-paren">(</span><em class="sig-param">single_slide_for_patch_extraction</em>, <em class="sig-param">anno_dir</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.Patch_Extractor.bbox_generation_tumor" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate a bounding box for tumor region. If several regions exist,
+a big bounding box will be generated to include all the regions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>single_slide_for_patch_extraction</strong> (<em>string</em>) – a slide for path extraction, a path</p></li>
+<li><p><strong>anno_dir</strong> (<em>list</em>) – annotations files</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bbox_tumor, the coordinates for the four corners of
+the tumor region.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.patch_extract.Patch_Extractor.convert_xml_df">
+<code class="sig-prename descclassname">dldp.patch_extract.Patch_Extractor.</code><code class="sig-name descname">convert_xml_df</code><span class="sig-paren">(</span><em class="sig-param">file</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.Patch_Extractor.convert_xml_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert the xml file to a list of coordinates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file</strong> – path for an xml file</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>coordinates</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple including all the coordinates</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.patch_extract.Patch_Extractor.create_folder">
+<code class="sig-prename descclassname">dldp.patch_extract.Patch_Extractor.</code><code class="sig-name descname">create_folder</code><span class="sig-paren">(</span><em class="sig-param">single_slide_for_patch_extraction</em>, <em class="sig-param">destination_folder</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.Patch_Extractor.create_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function is used to create folder and store image patches. All the
+image patches extracted from the same slide will be saved in the same
+folder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>single_slide_for_patch_extraction</strong> (<em>str</em>) – the slide used to get image
+patches</p></li>
+<li><p><strong>destination_folder</strong> – the place to store all the extracted image
+patches</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the folder to be created</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.patch_extract.Patch_Extractor.extract_normal_patches_from_normal_slide">
+<code class="sig-prename descclassname">dldp.patch_extract.Patch_Extractor.</code><code class="sig-name descname">extract_normal_patches_from_normal_slide</code><span class="sig-paren">(</span><em class="sig-param">slide</em>, <em class="sig-param">thresh</em>, <em class="sig-param">crop_size</em>, <em class="sig-param">bbox_tissue</em>, <em class="sig-param">des_folder_normal_patches</em>, <em class="sig-param">single_slide_for_patch_extraction</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.Patch_Extractor.extract_normal_patches_from_normal_slide" title="Permalink to this definition">¶</a></dt>
+<dd><p>The actual function for patch extraction from normal slides.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slide</strong> (<em>object</em>) – object generated by openslide</p></li>
+<li><p><strong>thresh</strong> (<em>list</em>) – the threshhold for tissue region</p></li>
+<li><p><strong>crop_size</strong> (<em>list</em>) – the size of image patches to be extracted</p></li>
+<li><p><strong>bbox_tissue</strong> (<em>tuple</em>) – the bounding box for tissue region</p></li>
+<li><p><strong>des_folder_normal_patches</strong> (<em>string</em>) – the folder to store the extracted patches</p></li>
+<li><p><strong>single_slide_for_patch_extraction</strong> (<em>string</em>) – the path of a WSI slide</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>The extracted image patches will be saved.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.patch_extract.Patch_Extractor.extract_normal_patches_from_tumor_slide">
+<code class="sig-prename descclassname">dldp.patch_extract.Patch_Extractor.</code><code class="sig-name descname">extract_normal_patches_from_tumor_slide</code><span class="sig-paren">(</span><em class="sig-param">slide</em>, <em class="sig-param">ground_truth</em>, <em class="sig-param">crop_size</em>, <em class="sig-param">thresh</em>, <em class="sig-param">bbox_tissue</em>, <em class="sig-param">des_folder_normal_patches</em>, <em class="sig-param">single_slide_for_patch_extraction</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.Patch_Extractor.extract_normal_patches_from_tumor_slide" title="Permalink to this definition">¶</a></dt>
+<dd><p>The actual function for tumor patch extraction from tumor slides.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slide</strong> (<em>object</em>) – object generated by openslide</p></li>
+<li><p><strong>ground_truth</strong> (<em>object</em>) – the object generated by openslide</p></li>
+<li><p><strong>crop_size</strong> (<em>list</em>) – the size of image patches to be extracted</p></li>
+<li><p><strong>thresh</strong> (<em>list</em>) – the threshhold for tissue region</p></li>
+<li><p><strong>bbox_tissue</strong> (<em>tuple</em>) – the bounding box for tissue region</p></li>
+<li><p><strong>des_folder_normal_patches</strong> (<em>string</em>) – the folder to store the extracted patches</p></li>
+<li><p><strong>single_slide_for_patch_extraction</strong> (<em>string</em>) – the path of a WSI slide</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>The extracted image patches will be saved.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.patch_extract.Patch_Extractor.extract_tumor_patches_from_tumor_slide">
+<code class="sig-prename descclassname">dldp.patch_extract.Patch_Extractor.</code><code class="sig-name descname">extract_tumor_patches_from_tumor_slide</code><span class="sig-paren">(</span><em class="sig-param">slide</em>, <em class="sig-param">ground_truth</em>, <em class="sig-param">crop_size</em>, <em class="sig-param">thresh</em>, <em class="sig-param">bbox_tumor</em>, <em class="sig-param">des_folder_tumor_patches</em>, <em class="sig-param">des_folder_tumor_patches_mask</em>, <em class="sig-param">single_slide_for_patch_extraction</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.Patch_Extractor.extract_tumor_patches_from_tumor_slide" title="Permalink to this definition">¶</a></dt>
+<dd><p>The actual function for tumor patch extraction from tumor slides.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slide</strong> (<em>object</em>) – object generated by openslide</p></li>
+<li><p><strong>ground_truth</strong> (<em>object</em>) – the object generated by openslide</p></li>
+<li><p><strong>crop_size</strong> (<em>list</em>) – the size of image patches to be extracted</p></li>
+<li><p><strong>thresh</strong> (<em>list</em>) – the threshhold for tissue region</p></li>
+<li><p><strong>bbox_tumor</strong> (<em>tuple</em>) – the bounding box for tumor region</p></li>
+<li><p><strong>des_folder_tumor_patches</strong> – the folder to store the extracted patches</p></li>
+<li><p><strong>des_folder_tumor_patches_mask</strong> – the folder to store the extracted
+ground truth</p></li>
+<li><p><strong>single_slide_for_patch_extraction</strong> (<em>string</em>) – the path of a WSI slide</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>The extracted image patches will be saved.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.patch_extract.Patch_Extractor.hsv_thumbnail">
+<code class="sig-prename descclassname">dldp.patch_extract.Patch_Extractor.</code><code class="sig-name descname">hsv_thumbnail</code><span class="sig-paren">(</span><em class="sig-param">slide</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.Patch_Extractor.hsv_thumbnail" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate a HSV thumbnail image for WSI image with downsample of 32.
+The ratio of length and width of the image is still the same as the
+level 0 image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>slide</strong> (<em>object</em>) – the initialized slide oject from openslide</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>hsv image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.patch_extract.Patch_Extractor.random_crop">
+<code class="sig-prename descclassname">dldp.patch_extract.Patch_Extractor.</code><code class="sig-name descname">random_crop</code><span class="sig-paren">(</span><em class="sig-param">slide</em>, <em class="sig-param">truth</em>, <em class="sig-param">thresh</em>, <em class="sig-param">crop_size</em>, <em class="sig-param">bbox</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.Patch_Extractor.random_crop" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate image patches from a WSI image
+:param slide: slide object created by openslide
+:type slide: object
+:param truth: ground truth object created by openslide
+:type param: object
+:param thresh: threshold for tissue region
+:type thresh: list
+:param crop_size: the size of image patch to be generated
+:type crop_size: list
+:param bbox: the coordinates of a bounding box
+:type bbox: tuple
+:returns: rgb_image, rgb_binary, rgb_mask, index
+:rtype: tuple</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.patch_extract.Patch_Extractor.random_crop2">
+<code class="sig-prename descclassname">dldp.patch_extract.Patch_Extractor.</code><code class="sig-name descname">random_crop2</code><span class="sig-paren">(</span><em class="sig-param">slide</em>, <em class="sig-param">truth</em>, <em class="sig-param">thresh</em>, <em class="sig-param">crop_size</em>, <em class="sig-param">bboxt</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.Patch_Extractor.random_crop2" title="Permalink to this definition">¶</a></dt>
+<dd><p>The major function to extract image patches from WSI images together with
+ground truth. This function is used for tumor patch extraction with its
+ground truth.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slide</strong> (<em>object</em>) – object generated using openslide</p></li>
+<li><p><strong>truth</strong> (<em>object</em>) – object generated using openslide</p></li>
+<li><p><strong>thresh</strong> (<em>list</em>) – the threshhold for tissue region</p></li>
+<li><p><strong>crop_size</strong> (<em>list</em>) – the size of image patches to be extracted</p></li>
+<li><p><strong>bboxt</strong> (<em>tuple</em>) – the bounding box for tissue region</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>rgb_image, rgb_binary, rgb_mask, index</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.patch_extract.Patch_Extractor.random_crop_normal">
+<code class="sig-prename descclassname">dldp.patch_extract.Patch_Extractor.</code><code class="sig-name descname">random_crop_normal</code><span class="sig-paren">(</span><em class="sig-param">slide</em>, <em class="sig-param">thresh</em>, <em class="sig-param">crop_size</em>, <em class="sig-param">bbox_tissue</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.Patch_Extractor.random_crop_normal" title="Permalink to this definition">¶</a></dt>
+<dd><p>The major function for image patch generation. This function is used to get
+image patches from normal WSI slides.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slide</strong> (<em>object</em>) – object generated by openslide</p></li>
+<li><p><strong>thresh</strong> (<em>list</em>) – the threshold for tissue region</p></li>
+<li><p><strong>crop_size</strong> (<em>list</em>) – the size of image patches to be extracted</p></li>
+<li><p><strong>bbox_tissue</strong> (<em>tuple</em>) – the bounding box for tissue region</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>rgb_image, rgb_binary, index</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.patch_extract.Patch_Extractor.slides_for_patch_extraction">
+<code class="sig-prename descclassname">dldp.patch_extract.Patch_Extractor.</code><code class="sig-name descname">slides_for_patch_extraction</code><span class="sig-paren">(</span><em class="sig-param">slide_folder</em>, <em class="sig-param">file_ext</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.Patch_Extractor.slides_for_patch_extraction" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is to generate a list for all the slides in a folder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slide_folder</strong> (<em>string</em>) – a folder storing WSI images.</p></li>
+<li><p><strong>file_ext</strong> (<em>string</em>) – file type, for exaple, “tif”</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>slide_paths</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>a list including all the obsolute paths of the slides from a
+folder.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.patch_extract.Patch_Extractor.testduplicates">
+<code class="sig-prename descclassname">dldp.patch_extract.Patch_Extractor.</code><code class="sig-name descname">testduplicates</code><span class="sig-paren">(</span><em class="sig-param">list</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.Patch_Extractor.testduplicates" title="Permalink to this definition">¶</a></dt>
+<dd><p>get rid of duplicate entries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>list</strong> (<em>list</em>) – the list for duplication checking</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the list with no duplication</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.patch_extract.Patch_Extractor.tissue_patch_threshold">
+<code class="sig-prename descclassname">dldp.patch_extract.Patch_Extractor.</code><code class="sig-name descname">tissue_patch_threshold</code><span class="sig-paren">(</span><em class="sig-param">slide</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.Patch_Extractor.tissue_patch_threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>get a threshold for tissue region</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>slide</strong> (<em>objec</em>) – the initialized slide oject from openslide</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>threshold</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-dldp.patch_extract.patch_extract_class">
+<span id="dldp-patch-extract-patch-extract-class-module"></span><h2>dldp.patch_extract.patch_extract_class module<a class="headerlink" href="#module-dldp.patch_extract.patch_extract_class" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="title-patch-extractor-class">
+<h3>Title: patch extractor class<a class="headerlink" href="#title-patch-extractor-class" title="Permalink to this headline">¶</a></h3>
+<p>Created: 11-30-2019
+Python-Version: 3.5</p>
+<div class="section" id="id5">
+<h4>Description:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p>This libray module provides a class for patch extraction. Its function is the same
+as the module Patch_Extractor.</p>
+</div>
+<div class="section" id="id6">
+<h4>Note:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>This module is still under developing.</p>
+<dl class="function">
+<dt id="dldp.patch_extract.patch_extract_class.create_folder">
+<code class="sig-prename descclassname">dldp.patch_extract.patch_extract_class.</code><code class="sig-name descname">create_folder</code><span class="sig-paren">(</span><em class="sig-param">single_slide_for_patch_extraction</em>, <em class="sig-param">destination_folder</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.patch_extract_class.create_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function is used to create folder and store image patches. All the
+image patches extracted from the same slide will be saved in the same
+folder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>single_slide_for_patch_extraction</strong> (<em>str</em>) – the slide used to get image
+patches</p></li>
+<li><p><strong>destination_folder</strong> – the place to store all the extracted image
+patches</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the folder to be created</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="dldp.patch_extract.patch_extract_class.patch_extract">
+<em class="property">class </em><code class="sig-prename descclassname">dldp.patch_extract.patch_extract_class.</code><code class="sig-name descname">patch_extract</code><span class="sig-paren">(</span><em class="sig-param">slide</em>, <em class="sig-param">crop_size</em>, <em class="sig-param">des_folder_patches</em>, <em class="sig-param">single_slide_for_patch_extraction</em>, <em class="sig-param">anno_dir=False</em>, <em class="sig-param">ground_truth=False</em>, <em class="sig-param">des_folder_mask=False</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.patch_extract_class.patch_extract" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The class is used to extract image patches from a single WSI image.
+The WSI image and its ground truth (if tumor) have to be read by
+OpenSlide as projects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slide</strong> (<em>object</em>) – object generated by openslide</p></li>
+<li><p><strong>ground_truth</strong> (<em>object</em>) – the object generated by openslide</p></li>
+<li><p><strong>crop_size</strong> (<em>list</em>) – the size of image patches to be extracted</p></li>
+<li><p><strong>des_folder_patches</strong> (<em>string</em>) – the folder to store the extracted patches</p></li>
+<li><p><strong>des_folder_mask</strong> – the folder to store the extracted
+ground truth</p></li>
+<li><p><strong>des_folder_mask</strong> – string</p></li>
+<li><p><strong>anno_dir</strong> (<em>string</em>) – the folder storing all the xml files</p></li>
+<li><p><strong>single_slide_for_patch_extraction</strong> (<em>string</em>) – the path of a WSI slide</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>thresh</strong> – the threshhold for tissue region</p></li>
+<li><p><strong>bbox_tissue</strong> – the bounding box for tissue region</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>The extracted image patches will be saved.</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="dldp.patch_extract.patch_extract_class.patch_extract.bbox_generation_tissue">
+<code class="sig-name descname">bbox_generation_tissue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.patch_extract_class.patch_extract.bbox_generation_tissue" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate a bounding box for tissue region in a WSI image</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>bbox_tissue, the coordinates for the four corners of
+the tissue region.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dldp.patch_extract.patch_extract_class.patch_extract.bbox_generation_tumor">
+<code class="sig-name descname">bbox_generation_tumor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.patch_extract_class.patch_extract.bbox_generation_tumor" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate a bounding box for tumor region. If several regions exist,
+a big bounding box will be generated to include all the regions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>bbox_tumor, the coordinates for the four corners of
+the tumor region.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dldp.patch_extract.patch_extract_class.patch_extract.extract_normal_patches_from_normal_slide">
+<code class="sig-name descname">extract_normal_patches_from_normal_slide</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.patch_extract_class.patch_extract.extract_normal_patches_from_normal_slide" title="Permalink to this definition">¶</a></dt>
+<dd><p>The actual function for patch extraction from normal slides.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dldp.patch_extract.patch_extract_class.patch_extract.extract_normal_patches_from_tumor_slide">
+<code class="sig-name descname">extract_normal_patches_from_tumor_slide</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.patch_extract_class.patch_extract.extract_normal_patches_from_tumor_slide" title="Permalink to this definition">¶</a></dt>
+<dd><p>The actual function for tumor patch extraction from tumor slides.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dldp.patch_extract.patch_extract_class.patch_extract.extract_tumor_patches_from_tumor_slide">
+<code class="sig-name descname">extract_tumor_patches_from_tumor_slide</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.patch_extract_class.patch_extract.extract_tumor_patches_from_tumor_slide" title="Permalink to this definition">¶</a></dt>
+<dd><p>The actual function for tumor patch extraction from tumor slides.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dldp.patch_extract.patch_extract_class.patch_extract.random_crop_normal">
+<code class="sig-name descname">random_crop_normal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.patch_extract_class.patch_extract.random_crop_normal" title="Permalink to this definition">¶</a></dt>
+<dd><p>The major function for image patch generation. This function is used to get
+image patches from normal WSI slides.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>rgb_image, rgb_binary, index</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dldp.patch_extract.patch_extract_class.patch_extract.random_crop_tumor_normal">
+<code class="sig-name descname">random_crop_tumor_normal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.patch_extract_class.patch_extract.random_crop_tumor_normal" title="Permalink to this definition">¶</a></dt>
+<dd><p>The major function to extract image patches from WSI images together with
+ground truth. This function is used for tumor patch extraction with its
+ground truth.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>rgb_image, rgb_binary, rgb_mask, index</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dldp.patch_extract.patch_extract_class.patch_extract.random_crop_tumor_tumor">
+<code class="sig-name descname">random_crop_tumor_tumor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.patch_extract_class.patch_extract.random_crop_tumor_tumor" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate image patches from a WSI image
+:returns: rgb_image, rgb_binary, rgb_mask, index
+:rtype: tuple</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dldp.patch_extract.patch_extract_class.patch_extract.testduplicates">
+<em class="property">static </em><code class="sig-name descname">testduplicates</code><span class="sig-paren">(</span><em class="sig-param">list</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.patch_extract_class.patch_extract.testduplicates" title="Permalink to this definition">¶</a></dt>
+<dd><p>get rid of duplicate entries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>list</strong> (<em>list</em>) – the list for duplication checking</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the list with no duplication</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dldp.patch_extract.patch_extract_class.patch_extract.tissue_patch_threshold">
+<code class="sig-name descname">tissue_patch_threshold</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.patch_extract_class.patch_extract.tissue_patch_threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>get a threshold for tissue region</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>threshold</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.patch_extract.patch_extract_class.slides_for_patch_extraction">
+<code class="sig-prename descclassname">dldp.patch_extract.patch_extract_class.</code><code class="sig-name descname">slides_for_patch_extraction</code><span class="sig-paren">(</span><em class="sig-param">slide_folder</em>, <em class="sig-param">file_ext</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.patch_extract.patch_extract_class.slides_for_patch_extraction" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is to generate a list for all the slides in a folder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slide_folder</strong> (<em>string</em>) – a folder storing WSI images.</p></li>
+<li><p><strong>file_ext</strong> (<em>string</em>) – file type, for exaple, “tif”</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>slide_paths</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>a list including all the obsolute paths of the slides from a
+folder.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="module-dldp.patch_extract">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dldp.patch_extract" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dldp.utils.html" class="btn btn-neutral float-right" title="dldp.utils package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dldp.model_eva.roc.html" class="btn btn-neutral float-left" title="dldp.model_eva.roc package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Weizhe Li, Weijie Chen
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

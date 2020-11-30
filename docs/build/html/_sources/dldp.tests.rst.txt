@@ -1,0 +1,86 @@
+dldp.tests package
+==================
+
+Submodules
+----------
+
+dldp.tests.conftest module
+--------------------------
+
+.. automodule:: dldp.tests.conftest
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dldp.tests.test\_cnn\_train module
+----------------------------------
+
+.. automodule:: dldp.tests.test_cnn_train
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dldp.tests.test\_heatmap\_pred module
+-------------------------------------
+
+.. automodule:: dldp.tests.test_heatmap_pred
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dldp.tests.test\_image\_process module
+--------------------------------------
+
+.. automodule:: dldp.tests.test_image_process
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dldp.tests.test\_logman module
+------------------------------
+
+.. automodule:: dldp.tests.test_logman
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dldp.tests.test\_model\_eva module
+----------------------------------
+
+.. automodule:: dldp.tests.test_model_eva
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dldp.tests.test\_patch\_extract module
+--------------------------------------
+
+.. automodule:: dldp.tests.test_patch_extract
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dldp.tests.test\_utils module
+-----------------------------
+
+.. automodule:: dldp.tests.test_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dldp.tests.test\_wsi\_visu module
+---------------------------------
+
+.. automodule:: dldp.tests.test_wsi_visu
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: dldp.tests
+   :members:
+   :undoc-members:
+   :show-inheritance:

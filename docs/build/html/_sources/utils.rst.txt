@@ -1,0 +1,46 @@
+utils package
+=============
+
+Submodules
+----------
+
+utils.fileman module
+--------------------
+
+.. automodule:: utils.fileman
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+utils.mask\_generation\_asap module
+-----------------------------------
+
+.. automodule:: utils.mask_generation_asap
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+utils.patch\_index module
+-------------------------
+
+.. automodule:: utils.patch_index
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+utils.xml\_to\_mask module
+--------------------------
+
+.. automodule:: utils.xml_to_mask
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: utils
+   :members:
+   :undoc-members:
+   :show-inheritance:

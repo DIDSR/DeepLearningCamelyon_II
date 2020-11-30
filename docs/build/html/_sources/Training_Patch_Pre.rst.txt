@@ -1,0 +1,7 @@
+Training\_Patch\_Pre module
+===========================
+
+.. automodule:: Training_Patch_Pre
+   :members:
+   :undoc-members:
+   :show-inheritance:

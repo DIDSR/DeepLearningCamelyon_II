@@ -1,0 +1,7 @@
+patches\_near\_tumor module
+===========================
+
+.. automodule:: patches_near_tumor
+   :members:
+   :undoc-members:
+   :show-inheritance:

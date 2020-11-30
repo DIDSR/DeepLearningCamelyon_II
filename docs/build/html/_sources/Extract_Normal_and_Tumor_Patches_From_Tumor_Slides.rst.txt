@@ -1,0 +1,7 @@
+Extract\_Normal\_and\_Tumor\_Patches\_From\_Tumor\_Slides module
+================================================================
+
+.. automodule:: Extract_Normal_and_Tumor_Patches_From_Tumor_Slides
+   :members:
+   :undoc-members:
+   :show-inheritance:

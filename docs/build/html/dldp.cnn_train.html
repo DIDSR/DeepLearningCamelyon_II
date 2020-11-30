@@ -1,0 +1,860 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dldp.cnn_train package &mdash; Deep Learning for Digital Pathology 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="dldp.heatmap_pred package" href="dldp.heatmap_pred.html" />
+    <link rel="prev" title="dldp package" href="dldp.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Deep Learning for Digital Pathology
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="dldp.html">dldp package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="dldp.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">dldp.cnn_train package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.cnn_train.CNN_Architecture">dldp.cnn_train.CNN_Architecture module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.cnn_train.Training_Patch_Pre">dldp.cnn_train.Training_Patch_Pre module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.cnn_train.main">dldp.cnn_train.main module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.cnn_train.training_patch_pre_class">dldp.cnn_train.training_patch_pre_class module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.cnn_train">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.heatmap_pred.html">dldp.heatmap_pred package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.image_process.html">dldp.image_process package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.model_eva.html">dldp.model_eva package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.patch_extract.html">dldp.patch_extract package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.utils.html">dldp.utils package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.wsi_visu.html">dldp.wsi_visu package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dldp.html#module-dldp">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Deep Learning for Digital Pathology</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="dldp.html">dldp package</a> &raquo;</li>
+        
+      <li>dldp.cnn_train package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/dldp.cnn_train.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dldp-cnn-train-package">
+<h1>dldp.cnn_train package<a class="headerlink" href="#dldp-cnn-train-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dldp.cnn_train.CNN_Architecture">
+<span id="dldp-cnn-train-cnn-architecture-module"></span><h2>dldp.cnn_train.CNN_Architecture module<a class="headerlink" href="#module-dldp.cnn_train.CNN_Architecture" title="Permalink to this headline">¶</a></h2>
+<p>Inception V1 model for Keras.
+Note that the input preprocessing function is different from
+the the VGG16 and ResNet models (same as Xception).
+Also that (currently) the output predictions are for 1001
+classes (with the 0 class being ‘background’),
+so require a shift compared to the other models here.
+# Reference
+- [Going deeper with convolutions](<a class="reference external" href="http://arxiv.org/abs/1409.4842v1">http://arxiv.org/abs/1409.4842v1</a>)</p>
+<dl class="function">
+<dt id="dldp.cnn_train.CNN_Architecture.InceptionV1">
+<code class="sig-prename descclassname">dldp.cnn_train.CNN_Architecture.</code><code class="sig-name descname">InceptionV1</code><span class="sig-paren">(</span><em class="sig-param">include_top=True</em>, <em class="sig-param">weights=None</em>, <em class="sig-param">input_tensor=None</em>, <em class="sig-param">input_shape=None</em>, <em class="sig-param">pooling=None</em>, <em class="sig-param">classes=2</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.CNN_Architecture.InceptionV1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiates the Inception v1 architecture.
+This architecture is defined in:</p>
+<blockquote>
+<div><p>Going deeper with convolutions
+Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed,
+Dragomir Anguelov, Dumitru Erhan, Vincent Vanhoucke, Andrew Rabinovich.
+<a class="reference external" href="http://arxiv.org/abs/1409.4842v1">http://arxiv.org/abs/1409.4842v1</a></p>
+</div></blockquote>
+<p>Optionally loads weights pre-trained
+on ImageNet. Note that when using TensorFlow,
+for best performance you should set
+<cite>image_data_format=”channels_last”</cite> in your Keras config
+at ~/.keras/keras.json.
+The model and the weights are compatible with both
+TensorFlow and Theano. The data format
+convention used by the model is the one
+specified in your Keras config file.
+Note that the default input image size for this model is 224x224.
+Arguments:</p>
+<blockquote>
+<div><dl>
+<dt>include_top: whether to include the fully-connected</dt><dd><p>layer at the top of the network.</p>
+</dd>
+<dt>weights: one of <cite>None</cite> (random initialization)</dt><dd><p>or “imagenet” (pre-training on ImageNet).</p>
+</dd>
+<dt>input_tensor: optional Keras tensor (i.e. output of <cite>layers.Input()</cite>)</dt><dd><p>to use as image input for the model.</p>
+</dd>
+<dt>input_shape: optional shape tuple, only to be specified</dt><dd><p>if <cite>include_top</cite> is False (otherwise the input shape
+has to be <cite>(224, 224, 3)</cite> (with <cite>channels_last</cite> data format)
+or <cite>(3, 224, 224)</cite> (with <cite>channels_first</cite> data format).
+It should have exactly 3 inputs channels,
+and width and height should be no smaller than 139.
+E.g. <cite>(150, 150, 3)</cite> would be one valid value.</p>
+</dd>
+<dt>pooling: Optional pooling mode for feature extraction</dt><dd><p>when <cite>include_top</cite> is <cite>False</cite>.
+- <cite>None</cite> means that the output of the model will be</p>
+<blockquote>
+<div><p>the 4D tensor output of the
+last convolutional layer.</p>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt><cite>avg</cite> means that global average pooling</dt><dd><p>will be applied to the output of the
+last convolutional layer, and thus
+the output of the model will be a 2D tensor.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>max</cite> means that global max pooling will</dt><dd><p>be applied.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>classes: optional number of classes to classify images</dt><dd><p>into, only to be specified if <cite>include_top</cite> is True, and
+if no <cite>weights</cite> argument is specified.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>A Keras model instance.</p>
+</dd>
+<dt>Raises:</dt><dd><dl class="simple">
+<dt>ValueError: in case of invalid argument for <cite>weights</cite>,</dt><dd><p>or invalid input shape.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.cnn_train.CNN_Architecture.concatenated_block">
+<code class="sig-prename descclassname">dldp.cnn_train.CNN_Architecture.</code><code class="sig-name descname">concatenated_block</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">specs</em>, <em class="sig-param">channel_axis</em>, <em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.CNN_Architecture.concatenated_block" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="dldp.cnn_train.CNN_Architecture.conv2d_bn">
+<code class="sig-prename descclassname">dldp.cnn_train.CNN_Architecture.</code><code class="sig-name descname">conv2d_bn</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">filters</em>, <em class="sig-param">num_row</em>, <em class="sig-param">num_col</em>, <em class="sig-param">padding='same'</em>, <em class="sig-param">strides=(1</em>, <em class="sig-param">1)</em>, <em class="sig-param">normalizer=False</em>, <em class="sig-param">activation='relu'</em>, <em class="sig-param">name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.CNN_Architecture.conv2d_bn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility function to apply conv + BN.
+Arguments:</p>
+<blockquote>
+<div><p>x: input tensor.
+filters: filters in <cite>Conv2D</cite>.
+num_row: height of the convolution kernel.
+num_col: width of the convolution kernel.
+padding: padding mode in <cite>Conv2D</cite>.
+strides: strides in <cite>Conv2D</cite>.
+name: name of the ops; will become <cite>name + ‘_conv’</cite></p>
+<blockquote>
+<div><p>for the convolution, <cite>name + ‘_bn’</cite> for the
+batch norm layer and <cite>name + ‘_act’</cite> for the
+activation layer.</p>
+</div></blockquote>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Output tensor after applying <cite>Conv2D</cite> and <cite>BatchNormalization</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-dldp.cnn_train.Training_Patch_Pre">
+<span id="dldp-cnn-train-training-patch-pre-module"></span><h2>dldp.cnn_train.Training_Patch_Pre module<a class="headerlink" href="#module-dldp.cnn_train.Training_Patch_Pre" title="Permalink to this headline">¶</a></h2>
+<p>PEP: 8
+Title: training patch prepare
+Author: Weizhe Li &lt;<a class="reference external" href="mailto:weizheli&#37;&#52;&#48;gmail&#46;com">weizheli<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;
+Sponsor: * Weijie Chen &lt;email at example.com&gt;
+Type: [Standards Track | Informational | Process]
+Content-Type: text/x-rst
+Created: 10-31-2019
+Python-Version: 3.5</p>
+<div class="section" id="description">
+<h3>Description:<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h3>
+<p>This libray module provides functions for get training patches ready for
+training neural network.</p>
+<dl class="function">
+<dt id="dldp.cnn_train.Training_Patch_Pre.color_noise_hsv_to_blue">
+<code class="sig-prename descclassname">dldp.cnn_train.Training_Patch_Pre.</code><code class="sig-name descname">color_noise_hsv_to_blue</code><span class="sig-paren">(</span><em class="sig-param">image</em>, <em class="sig-param">max=20</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.Training_Patch_Pre.color_noise_hsv_to_blue" title="Permalink to this definition">¶</a></dt>
+<dd><p>adding color noise to the direction of blue based on HSV color space</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>array</em>) – the image to be modified</p></li>
+<li><p><strong>max</strong> (<em>int</em>) – the range of color noise</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>img_noise_rgb, a RGB image with color noise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.cnn_train.Training_Patch_Pre.color_noise_hsv_to_red">
+<code class="sig-prename descclassname">dldp.cnn_train.Training_Patch_Pre.</code><code class="sig-name descname">color_noise_hsv_to_red</code><span class="sig-paren">(</span><em class="sig-param">image</em>, <em class="sig-param">max=20</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.Training_Patch_Pre.color_noise_hsv_to_red" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to add color noise to the direction of red
+based on HSV color space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>array</em>) – the original image</p></li>
+<li><p><strong>max</strong> (<em>int</em>) – the range of color noise</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>m_rgb, a RGB image with color noise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.cnn_train.Training_Patch_Pre.creat_folder">
+<code class="sig-prename descclassname">dldp.cnn_train.Training_Patch_Pre.</code><code class="sig-name descname">creat_folder</code><span class="sig-paren">(</span><em class="sig-param">new_slide_path</em>, <em class="sig-param">path_for_results</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.Training_Patch_Pre.creat_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>To create folder to store the prediction results.
+:param new_slide_path: slide path
+:type new_slide_path: string
+:param path_for_results: the folder storing results
+:type path_for_results: string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the obsolute path of the new created folder</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.cnn_train.Training_Patch_Pre.gen_imgs">
+<code class="sig-prename descclassname">dldp.cnn_train.Training_Patch_Pre.</code><code class="sig-name descname">gen_imgs</code><span class="sig-paren">(</span><em class="sig-param">samples</em>, <em class="sig-param">batch_size</em>, <em class="sig-param">crop_size</em>, <em class="sig-param">folder_to_save=False</em>, <em class="sig-param">shuffle=True</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.Training_Patch_Pre.gen_imgs" title="Permalink to this definition">¶</a></dt>
+<dd><p>The a generator used to feed neural network with image patches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>samples</strong> (<em>dataframe</em><em> (</em><em>two columns: path</em><em>, </em><em>tumor</em><em>)</em>) – the total training or validation image patches</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em>) – the size of batch</p></li>
+<li><p><strong>crop_size</strong> (<em>list</em>) – the size of cropped images</p></li>
+<li><p><strong>folder_to_save</strong> (<em>string</em>) – the place to storing the augmented images</p></li>
+<li><p><strong>shuffle</strong> (<em>boolean</em>) – if the images will be shuffled or not</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>X_train, y_train</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.cnn_train.Training_Patch_Pre.gen_imgs_1_to_5">
+<code class="sig-prename descclassname">dldp.cnn_train.Training_Patch_Pre.</code><code class="sig-name descname">gen_imgs_1_to_5</code><span class="sig-paren">(</span><em class="sig-param">samples</em>, <em class="sig-param">batch_size</em>, <em class="sig-param">crop_size</em>, <em class="sig-param">folder_to_save=False</em>, <em class="sig-param">shuffle=True</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.Training_Patch_Pre.gen_imgs_1_to_5" title="Permalink to this definition">¶</a></dt>
+<dd><p>The a generator used to feed neural network with image patches.
+Each orginal patch will give 5 new image patches after augmentation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>samples</strong> (<em>dataframe</em><em> (</em><em>two columns: path</em><em>, </em><em>tumor</em><em>)</em>) – the total training or validation image patches</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em>) – the size of batch</p></li>
+<li><p><strong>crop_size</strong> (<em>list</em>) – the size of cropped images</p></li>
+<li><p><strong>folder_to_save</strong> (<em>string</em>) – the place to storing the augmented images</p></li>
+<li><p><strong>shuffle</strong> (<em>boolean</em>) – if the images will be shuffled or not</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>X_train, y_train</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.cnn_train.Training_Patch_Pre.gen_imgs_color_noise">
+<code class="sig-prename descclassname">dldp.cnn_train.Training_Patch_Pre.</code><code class="sig-name descname">gen_imgs_color_noise</code><span class="sig-paren">(</span><em class="sig-param">samples</em>, <em class="sig-param">batch_size</em>, <em class="sig-param">crop_size</em>, <em class="sig-param">folder_to_save=False</em>, <em class="sig-param">shuffle=True</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.Training_Patch_Pre.gen_imgs_color_noise" title="Permalink to this definition">¶</a></dt>
+<dd><p>The a generator used to feed neural network with image patches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>samples</strong> (<em>dataframe</em><em> (</em><em>two columns: path</em><em>, </em><em>tumor</em><em>)</em>) – the total training or validation image patches</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em>) – the size of batch</p></li>
+<li><p><strong>crop_size</strong> (<em>list</em>) – the size of cropped images</p></li>
+<li><p><strong>folder_to_save</strong> (<em>string</em>) – the place to storing the augmented images</p></li>
+<li><p><strong>shuffle</strong> (<em>boolean</em>) – if the images will be shuffled or not</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>X_train, y_train</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.cnn_train.Training_Patch_Pre.patch_aug_flip_rotate_crop">
+<code class="sig-prename descclassname">dldp.cnn_train.Training_Patch_Pre.</code><code class="sig-name descname">patch_aug_flip_rotate_crop</code><span class="sig-paren">(</span><em class="sig-param">image</em>, <em class="sig-param">crop_size</em>, <em class="sig-param">image_name</em>, <em class="sig-param">folder_to_save=False</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.Training_Patch_Pre.patch_aug_flip_rotate_crop" title="Permalink to this definition">¶</a></dt>
+<dd><p>the function generates 224 patches from 256 patches</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>array</em>) – the original image patch</p></li>
+<li><p><strong>crop_size</strong> (<em>list</em>) – the sized of new image</p></li>
+<li><p><strong>image_name</strong> (<em>string</em>) – the name of the original image</p></li>
+<li><p><strong>folder_to_save</strong> (<em>string</em>) – the folder to save the new images</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>cropped image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.cnn_train.Training_Patch_Pre.patch_aug_flip_rotate_crop_1_to_5">
+<code class="sig-prename descclassname">dldp.cnn_train.Training_Patch_Pre.</code><code class="sig-name descname">patch_aug_flip_rotate_crop_1_to_5</code><span class="sig-paren">(</span><em class="sig-param">image</em>, <em class="sig-param">crop_size</em>, <em class="sig-param">image_name</em>, <em class="sig-param">folder_to_save=False</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.Training_Patch_Pre.patch_aug_flip_rotate_crop_1_to_5" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function generates 224 patches from 256 patches.
+each image patches will have 5 cropped and rotated image patches</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>array</em>) – the original image</p></li>
+<li><p><strong>crop_size</strong> (<em>list</em>) – the size of new image</p></li>
+<li><p><strong>image_name</strong> (<em>string</em>) – the name of original image</p></li>
+<li><p><strong>folder_to_save</strong> – the folder storing the new images</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>image list including 5 new images</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.cnn_train.Training_Patch_Pre.patch_finder">
+<code class="sig-prename descclassname">dldp.cnn_train.Training_Patch_Pre.</code><code class="sig-name descname">patch_finder</code><span class="sig-paren">(</span><em class="sig-param">image_patch_dir</em>, <em class="sig-param">hnm_dir=False</em>, <em class="sig-param">pnt_dir=False</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.Training_Patch_Pre.patch_finder" title="Permalink to this definition">¶</a></dt>
+<dd><p>list all the training patches and put their information into a dataframe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>image_patch_dir</strong> (<em>string</em>) – the folder storing all the image patches including
+training and validation patches</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>two dataframes, one for tumor patches; one for normal patches</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.cnn_train.Training_Patch_Pre.training_patch_paths">
+<code class="sig-prename descclassname">dldp.cnn_train.Training_Patch_Pre.</code><code class="sig-name descname">training_patch_paths</code><span class="sig-paren">(</span><em class="sig-param">image_patch_dir</em>, <em class="sig-param">exclude_normal_list</em>, <em class="sig-param">validation_slides_normal</em>, <em class="sig-param">validation_slides_tumor</em>, <em class="sig-param">path_to_save_model</em>, <em class="sig-param">IIIdhistech_only</em>, <em class="sig-param">hnm_dir=False</em>, <em class="sig-param">pnt_dir=False</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.Training_Patch_Pre.training_patch_paths" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate training and validation patch patches</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image_patch_dir</strong> (<em>string</em>) – the folder storing all the image patches</p></li>
+<li><p><strong>exclude_normal_list</strong> (<em>list</em>) – the normal slides with partial annotations for
+tumor region</p></li>
+<li><p><strong>validation_slides_normal</strong> – the normal WSI slides for validation</p></li>
+<li><p><strong>validation_slides_tumor</strong> – the tumor WSI slides for validation</p></li>
+<li><p><strong>path_to_save_model</strong> (<em>string</em>) – the folder storing the results</p></li>
+<li><p><strong>IIIdhistech_only</strong> (<em>boolean</em>) – only the slides from 3dhistech scanners will be used</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>training_patches, validation_patches</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-dldp.cnn_train.main">
+<span id="dldp-cnn-train-main-module"></span><h2>dldp.cnn_train.main module<a class="headerlink" href="#module-dldp.cnn_train.main" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="title-training-neural-network">
+<h3>Title: training neural network<a class="headerlink" href="#title-training-neural-network" title="Permalink to this headline">¶</a></h3>
+<p>Created: 10-31-2019
+Python-Version: 3.5</p>
+<div class="section" id="id1">
+<h4>Description:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>This module is used for training neural network.</p>
+<dl class="function">
+<dt id="dldp.cnn_train.main.model_train">
+<code class="sig-prename descclassname">dldp.cnn_train.main.</code><code class="sig-name descname">model_train</code><span class="sig-paren">(</span><em class="sig-param">train_generator</em>, <em class="sig-param">validation_generator</em>, <em class="sig-param">model_name_path</em>, <em class="sig-param">model_name</em>, <em class="sig-param">sub_folder</em>, <em class="sig-param">BATCH_SIZE</em>, <em class="sig-param">N_EPOCHS</em>, <em class="sig-param">current_time</em>, <em class="sig-param">patches_category</em>, <em class="sig-param">color_noise</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.main.model_train" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function for training neural network</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>train_generator</strong> (<em>array</em>) – the training patches per batch</p></li>
+<li><p><strong>validation_generator</strong> (<em>array</em>) – the training patches per batch</p></li>
+<li><p><strong>model_name_path</strong> (<em>string</em>) – the place to save the model</p></li>
+<li><p><strong>model_name</strong> (<em>string</em>) – the name for trained model</p></li>
+<li><p><strong>sub_folder</strong> (<em>string</em>) – the subfolder to store the results</p></li>
+<li><p><strong>BATCH_SIZE</strong> (<em>int</em>) – the batch size, here is 32</p></li>
+<li><p><strong>N_EPOCHS</strong> (<em>int</em>) – the total training epochs</p></li>
+<li><p><strong>current_time</strong> (<em>string</em>) – the time of neural network training</p></li>
+<li><p><strong>patches_category</strong> (<em>string</em>) – the name of the folder
+with all training patches</p></li>
+<li><p><strong>color_noise</strong> (<em>string</em>) – the type of color noise</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>history</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>object</p>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>multiple trained models will be saved during training.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.cnn_train.main.step_decay">
+<code class="sig-prename descclassname">dldp.cnn_train.main.</code><code class="sig-name descname">step_decay</code><span class="sig-paren">(</span><em class="sig-param">epoch</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.main.step_decay" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function is used to schedule the learning rate over epochs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>epoch</strong> (<em>int</em>) – the epoch number from network training</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>learning rate</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="module-dldp.cnn_train.training_patch_pre_class">
+<span id="dldp-cnn-train-training-patch-pre-class-module"></span><h2>dldp.cnn_train.training_patch_pre_class module<a class="headerlink" href="#module-dldp.cnn_train.training_patch_pre_class" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="title-training-patch-prepare">
+<h3>Title: training patch prepare<a class="headerlink" href="#title-training-patch-prepare" title="Permalink to this headline">¶</a></h3>
+<p>Created: 10-31-2019
+Python-Version: 3.5</p>
+<div class="section" id="id2">
+<h4>Description:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>This libray module provides functions for get training patches ready for
+training neural network.</p>
+<dl class="function">
+<dt id="dldp.cnn_train.training_patch_pre_class.creat_folder">
+<code class="sig-prename descclassname">dldp.cnn_train.training_patch_pre_class.</code><code class="sig-name descname">creat_folder</code><span class="sig-paren">(</span><em class="sig-param">new_slide_path</em>, <em class="sig-param">path_for_results</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.training_patch_pre_class.creat_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function is used to create folder for each WSI slide to store the extracted
+patches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>new_slide_path</strong> (<em>string</em>) – the folder to be created</p></li>
+<li><p><strong>path_for_results</strong> (<em>string</em>) – the folder to store all the extracted patches</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the obsolute path of the new created folder</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="dldp.cnn_train.training_patch_pre_class.patch_pre_for_train">
+<em class="property">class </em><code class="sig-prename descclassname">dldp.cnn_train.training_patch_pre_class.</code><code class="sig-name descname">patch_pre_for_train</code><span class="sig-paren">(</span><em class="sig-param">image_patch_dir</em>, <em class="sig-param">exclude_normal_list</em>, <em class="sig-param">validation_slides_normal</em>, <em class="sig-param">validation_slides_tumor</em>, <em class="sig-param">path_to_save_model</em>, <em class="sig-param">crop_size</em>, <em class="sig-param">batch_size</em>, <em class="sig-param">IIIdhistech_only=False</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.training_patch_pre_class.patch_pre_for_train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The class is used to send series of image patches for network training.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image_patch_dir</strong> (<em>string</em>) – the folder storing all the image patches including
+training and validation patches</p></li>
+<li><p><strong>exclude_normal_list</strong> (<em>list</em>) – the normal slides with partial annotations for
+tumor region</p></li>
+<li><p><strong>validation_slides_normal</strong> – the normal WSI slides for validation</p></li>
+<li><p><strong>validation_slides_tumor</strong> – the tumor WSI slides for validation</p></li>
+<li><p><strong>path_to_save_model</strong> (<em>string</em>) – the folder storing the results</p></li>
+<li><p><strong>crop_size</strong> (<em>list</em>) – the size of image patches sent to network training</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em>) – the number of image patches per batch</p></li>
+<li><p><strong>IIIdhistech_only</strong> (<em>boolean</em>) – only the slides from 3dhistech scanners will be used</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables</dt>
+<dd class="field-even"><p><strong>sample_type</strong> – “training” or “validation”</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="dldp.cnn_train.training_patch_pre_class.patch_pre_for_train.color_noise_hsv_to_blue">
+<em class="property">static </em><code class="sig-name descname">color_noise_hsv_to_blue</code><span class="sig-paren">(</span><em class="sig-param">image</em>, <em class="sig-param">max=20</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.training_patch_pre_class.patch_pre_for_train.color_noise_hsv_to_blue" title="Permalink to this definition">¶</a></dt>
+<dd><p>adding color noise to the direction of blue based on HSV color space</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>array</em>) – the image to be modified</p></li>
+<li><p><strong>max</strong> (<em>int</em>) – the range of color noise</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>img_noise_rgb, a RGB image with color noise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dldp.cnn_train.training_patch_pre_class.patch_pre_for_train.color_noise_hsv_to_red">
+<em class="property">static </em><code class="sig-name descname">color_noise_hsv_to_red</code><span class="sig-paren">(</span><em class="sig-param">image</em>, <em class="sig-param">max=20</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.training_patch_pre_class.patch_pre_for_train.color_noise_hsv_to_red" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to add color noise to the direction of red
+based on HSV color space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>array</em>) – the original image</p></li>
+<li><p><strong>max</strong> (<em>int</em>) – the range of color noise</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>m_rgb, a RGB image with color noise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dldp.cnn_train.training_patch_pre_class.patch_pre_for_train.gen_imgs">
+<code class="sig-name descname">gen_imgs</code><span class="sig-paren">(</span><em class="sig-param">sample_type</em>, <em class="sig-param">shuffle=True</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.training_patch_pre_class.patch_pre_for_train.gen_imgs" title="Permalink to this definition">¶</a></dt>
+<dd><p>The a generator used to feed neural network with image patches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sample_type</strong> (<em>string</em>) – “training” or “validation”</p></li>
+<li><p><strong>shuffle</strong> (<em>boolean</em>) – if the images will be shuffled or not</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>X_train, y_train</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dldp.cnn_train.training_patch_pre_class.patch_pre_for_train.gen_imgs_1_to_5">
+<code class="sig-name descname">gen_imgs_1_to_5</code><span class="sig-paren">(</span><em class="sig-param">sample_type</em>, <em class="sig-param">shuffle=True</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.training_patch_pre_class.patch_pre_for_train.gen_imgs_1_to_5" title="Permalink to this definition">¶</a></dt>
+<dd><p>The a generator used to feed neural network with image patches.
+Each orginal patch will give 5 new image patches after augmentation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sample_type</strong> (<em>string</em>) – “training” or “validation”</p></li>
+<li><p><strong>shuffle</strong> (<em>boolean</em>) – if the images will be shuffled or not</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>X_train, y_train</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dldp.cnn_train.training_patch_pre_class.patch_pre_for_train.gen_imgs_color_noise">
+<code class="sig-name descname">gen_imgs_color_noise</code><span class="sig-paren">(</span><em class="sig-param">sample_type</em>, <em class="sig-param">shuffle=True</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.training_patch_pre_class.patch_pre_for_train.gen_imgs_color_noise" title="Permalink to this definition">¶</a></dt>
+<dd><p>The a generator used to feed neural network with image patches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sample_type</strong> (<em>string</em>) – “training” or “validation”</p></li>
+<li><p><strong>shuffle</strong> (<em>boolean</em>) – if the images will be shuffled or not</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>X_train, y_train</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dldp.cnn_train.training_patch_pre_class.patch_pre_for_train.patch_aug_flip_rotate_crop">
+<code class="sig-name descname">patch_aug_flip_rotate_crop</code><span class="sig-paren">(</span><em class="sig-param">image</em>, <em class="sig-param">image_name=False</em>, <em class="sig-param">folder_to_save=False</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.training_patch_pre_class.patch_pre_for_train.patch_aug_flip_rotate_crop" title="Permalink to this definition">¶</a></dt>
+<dd><p>the function generates 224 patches from 256 patches</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>array</em>) – the original image patch</p></li>
+<li><p><strong>image_name</strong> (<em>string</em>) – the name of the original image</p></li>
+<li><p><strong>folder_to_save</strong> (<em>string</em>) – the folder to save the new images</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>cropped image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dldp.cnn_train.training_patch_pre_class.patch_pre_for_train.patch_aug_flip_rotate_crop_1_to_5">
+<code class="sig-name descname">patch_aug_flip_rotate_crop_1_to_5</code><span class="sig-paren">(</span><em class="sig-param">image</em>, <em class="sig-param">image_name=False</em>, <em class="sig-param">folder_to_save=False</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.training_patch_pre_class.patch_pre_for_train.patch_aug_flip_rotate_crop_1_to_5" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function generates 224 patches from 256 patches.
+each image patches will have 5 cropped and rotated image patches</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>array</em>) – the original image</p></li>
+<li><p><strong>image_name</strong> (<em>string</em>) – the name of original image</p></li>
+<li><p><strong>self.folder_to_save</strong> – the folder storing the new images</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>image list including 5 new images</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dldp.cnn_train.training_patch_pre_class.patch_pre_for_train.training_patch_paths">
+<code class="sig-name descname">training_patch_paths</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dldp.cnn_train.training_patch_pre_class.patch_pre_for_train.training_patch_paths" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate training and validation patch patches</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>training_patches, validation_patches</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="module-dldp.cnn_train">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dldp.cnn_train" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dldp.heatmap_pred.html" class="btn btn-neutral float-right" title="dldp.heatmap_pred package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dldp.html" class="btn btn-neutral float-left" title="dldp package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Weizhe Li, Weijie Chen
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,499 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dldp.model_eva.roc package &mdash; Deep Learning for Digital Pathology 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="dldp.patch_extract package" href="dldp.patch_extract.html" />
+    <link rel="prev" title="dldp.model_eva.froc package" href="dldp.model_eva.froc.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Deep Learning for Digital Pathology
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="dldp.html">dldp package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="dldp.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dldp.cnn_train.html">dldp.cnn_train package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.heatmap_pred.html">dldp.heatmap_pred package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.image_process.html">dldp.image_process package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="dldp.model_eva.html">dldp.model_eva package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="dldp.model_eva.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dldp.model_eva.html#module-dldp.model_eva">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.patch_extract.html">dldp.patch_extract package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.utils.html">dldp.utils package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.wsi_visu.html">dldp.wsi_visu package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dldp.html#module-dldp">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Deep Learning for Digital Pathology</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="dldp.html">dldp package</a> &raquo;</li>
+        
+          <li><a href="dldp.model_eva.html">dldp.model_eva package</a> &raquo;</li>
+        
+      <li>dldp.model_eva.roc package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/dldp.model_eva.roc.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dldp-model-eva-roc-package">
+<h1>dldp.model_eva.roc package<a class="headerlink" href="#dldp-model-eva-roc-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch">
+<span id="dldp-model-eva-roc-parameter-extraction-for-random-forest-batch-module"></span><h2>dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch module<a class="headerlink" href="#module-dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="parameter-extraction-for-random-forest-batch">
+<h3>Parameter_Extraction_For_Random Forest_Batch<a class="headerlink" href="#parameter-extraction-for-random-forest-batch" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="purpose">
+<h4>Purpose:<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h4>
+<p>This module is used to extract parameters from the heatmaps of Normal, Tumor and Test slides
+based on different thresholds (0.5, 0.6, 0.7, 0.8, 0.9).</p>
+</div>
+<div class="section" id="description">
+<h4>Description:<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h4>
+<p>The input files:</p>
+<ul class="simple">
+<li><p>A directory:</p></li>
+<li><dl class="simple">
+<dt>A csv file: it has the slide name and its label as normal or tumor, which serves as</dt><dd><p>ground truth.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>The output files:</p>
+<ul class="simple">
+<li><p>A csv file: it included the following parameters for whole-slide image classification task:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">global</span> <span class="n">features</span>
+
+<span class="mf">1.</span> <span class="n">The</span> <span class="n">ratio</span> <span class="n">between</span> <span class="n">the</span> <span class="n">area</span> <span class="n">of</span> <span class="n">metastatic</span> <span class="n">regions</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">tissue</span> <span class="n">area</span><span class="o">.</span>
+<span class="mf">2.</span> <span class="n">The</span> <span class="nb">sum</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">cancer</span> <span class="n">metastases</span> <span class="n">probailities</span> <span class="n">detected</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">metastasis</span> <span class="n">identification</span> <span class="n">task</span><span class="p">,</span> <span class="n">divided</span> <span class="n">by</span> <span class="n">the</span>
+<span class="n">tissue</span> <span class="n">area</span><span class="o">.</span> <span class="n">caculate</span> <span class="n">them</span> <span class="n">at</span> <span class="mi">5</span> <span class="n">different</span> <span class="n">thresholds</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">),</span> <span class="n">so</span> <span class="n">the</span> <span class="n">total</span> <span class="mi">10</span> <span class="k">global</span> <span class="n">features</span>
+
+<span class="n">local</span> <span class="n">features</span>
+
+<span class="n">Based</span> <span class="n">on</span> <span class="mi">2</span> <span class="n">largest</span> <span class="n">metastatic</span> <span class="n">candidate</span> <span class="n">regions</span> <span class="p">(</span><span class="n">select</span> <span class="n">them</span> <span class="n">based</span> <span class="n">on</span> <span class="n">a</span> <span class="n">threshold</span> <span class="n">of</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">.</span> <span class="mi">9</span> <span class="n">features</span> <span class="n">were</span> <span class="n">extracted</span>
+<span class="kn">from</span> <span class="nn">the</span> <span class="mi">2</span> <span class="n">largest</span> <span class="n">regions</span><span class="p">:</span>
+
+<span class="mf">1.</span> <span class="n">Area</span><span class="p">:</span> <span class="n">the</span> <span class="n">area</span> <span class="n">of</span> <span class="n">connected</span> <span class="n">region</span>
+<span class="mf">2.</span> <span class="n">Eccentricity</span><span class="p">:</span> <span class="n">The</span> <span class="n">eccentricity</span> <span class="n">of</span> <span class="n">the</span> <span class="n">ellipse</span> <span class="n">that</span> <span class="n">has</span> <span class="n">the</span> <span class="n">same</span> <span class="n">second</span><span class="o">-</span><span class="n">moments</span> <span class="k">as</span> <span class="n">the</span> <span class="n">region</span>
+<span class="mf">3.</span> <span class="n">Extend</span><span class="p">:</span> <span class="n">The</span> <span class="n">ratio</span> <span class="n">of</span> <span class="n">region</span> <span class="n">area</span> <span class="n">over</span> <span class="n">the</span> <span class="n">total</span> <span class="n">bounding</span> <span class="n">box</span> <span class="n">area</span>
+<span class="mf">4.</span> <span class="n">Bounding</span> <span class="n">box</span> <span class="n">area</span>
+<span class="mf">5.</span> <span class="n">Major</span> <span class="n">axis</span> <span class="n">length</span><span class="p">:</span> <span class="n">the</span> <span class="n">length</span> <span class="n">of</span> <span class="n">the</span> <span class="n">major</span> <span class="n">axis</span> <span class="n">of</span> <span class="n">the</span> <span class="n">ellipse</span> <span class="n">that</span> <span class="n">has</span> <span class="n">the</span> <span class="n">same</span> <span class="n">normalized</span> <span class="n">second</span> <span class="n">central</span>
+<span class="n">moments</span> <span class="k">as</span> <span class="n">the</span> <span class="n">region</span>
+<span class="mf">6.</span> <span class="n">Max</span><span class="o">/</span><span class="n">mean</span><span class="o">/</span><span class="nb">min</span> <span class="n">intensity</span><span class="p">:</span> <span class="n">The</span> <span class="nb">max</span><span class="o">/</span><span class="n">mean</span><span class="o">/</span><span class="n">minimum</span> <span class="n">probability</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">region</span>
+<span class="mf">7.</span> <span class="n">Aspect</span> <span class="n">ratio</span> <span class="n">of</span> <span class="n">the</span> <span class="n">bounding</span> <span class="n">box</span>
+<span class="mf">8.</span> <span class="n">Solidity</span><span class="p">:</span> <span class="n">Ratio</span> <span class="n">of</span> <span class="n">region</span> <span class="n">area</span> <span class="n">over</span> <span class="n">the</span> <span class="n">surrounding</span> <span class="n">convex</span> <span class="n">area</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt id="dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch.create_folder">
+<code class="sig-prename descclassname">dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch.</code><code class="sig-name descname">create_folder</code><span class="sig-paren">(</span><em class="sig-param">result_folder</em>, <em class="sig-param">sub_folder</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch.create_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>To create folders</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sub_folder</strong> (<em>str</em>) – the folder to be created.</p></li>
+<li><p><strong>result_folder</strong> – the folder to store the results</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>folder_to_create</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch.get_largest_tumor_index_area">
+<code class="sig-prename descclassname">dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch.</code><code class="sig-name descname">get_largest_tumor_index_area</code><span class="sig-paren">(</span><em class="sig-param">region_props</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch.get_largest_tumor_index_area" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function is used to find the largest tumor region.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>region_props</strong> (<em>dataframe</em>) – the results from get_region_props.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the largest tumor region with its area and index.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch.get_region_props">
+<code class="sig-prename descclassname">dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch.</code><code class="sig-name descname">get_region_props</code><span class="sig-paren">(</span><em class="sig-param">heatmapbinary</em>, <em class="sig-param">heatmap</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch.get_region_props" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the most fundamental function for local feature extraction.
+:param heatmapbinary: the binary array generated by a threshold, for example, 0.5.
+:type heatmapbinary: array
+:param heatmap: The heatmap created by the trained model during the prediction. The heatmap here</p>
+<blockquote>
+<div><p>is the final assembled array from many small arrays.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>region properties</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch.get_second_largest_tumor_index_area">
+<code class="sig-prename descclassname">dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch.</code><code class="sig-name descname">get_second_largest_tumor_index_area</code><span class="sig-paren">(</span><em class="sig-param">region_props</em>, <em class="sig-param">largest_index</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch.get_second_largest_tumor_index_area" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function is used to find the second largest tumor region.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>region_props</strong> (<em>dataframe</em>) – the results from get_region_props.</p></li>
+<li><p><strong>largest_index</strong> – the index of the largest region</p></li>
+</ul>
+</dd>
+</dl>
+<p>:type int
+:return: the second largest tumor region with its area and index.
+:rtype: tuple</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch.glob_features">
+<code class="sig-prename descclassname">dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch.</code><code class="sig-name descname">glob_features</code><span class="sig-paren">(</span><em class="sig-param">slide_path</em>, <em class="sig-param">heatmap</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch.glob_features" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function is used to generate global features based on heatmap.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slide_path</strong> (<em>str</em>) – The path for individual WSI, not the path for WSIs folder.</p></li>
+<li><p><strong>heatmap</strong> (<em>array</em>) – the heatmap created by the trained model during the prediction. The heatmap here
+is the final assembled array from many small arrays.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>global features</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch.local_features">
+<code class="sig-prename descclassname">dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch.</code><code class="sig-name descname">local_features</code><span class="sig-paren">(</span><em class="sig-param">heatmap</em>, <em class="sig-param">threshold</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.model_eva.roc.Parameter_Extraction_For_Random_Forest_Batch.local_features" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function is to be used for generation of local_features from heatmap</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>heatmap</strong> (<em>array</em>) – The heatmap created by the trained model during the prediction. The heatmap here
+is the final assembled array from many small arrays.</p></li>
+<li><p><strong>threshold</strong> (<em>float</em>) – the threshold set for generating binary arrays.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>local features</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="module-dldp.model_eva.roc.RF_training_batch">
+<span id="dldp-model-eva-roc-rf-training-batch-module"></span><h2>dldp.model_eva.roc.RF_training_batch module<a class="headerlink" href="#module-dldp.model_eva.roc.RF_training_batch" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="random-forest-model-training-batch">
+<h3>Random Forest Model Training_Batch<a class="headerlink" href="#random-forest-model-training-batch" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id1">
+<h3>Purpose:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>This module is used to train a series of random forest models.</p>
+</div>
+<div class="section" id="id2">
+<h3>Description:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>The input files:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>A directory: it has subdirectories based on the threshold. In each subdirectories,</dt><dd><p>there are three csv files which have the parameters extracted from the heatmap.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>A csv file: it has the slide name and its label as normal or tumor, which serves as</dt><dd><p>ground truth.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<dl class="function">
+<dt id="dldp.model_eva.roc.RF_training_batch.RF_model_training">
+<code class="sig-prename descclassname">dldp.model_eva.roc.RF_training_batch.</code><code class="sig-name descname">RF_model_training</code><span class="sig-paren">(</span><em class="sig-param">X_tumor</em>, <em class="sig-param">X_normal</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.model_eva.roc.RF_training_batch.RF_model_training" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function is used for conducting hyper parameter search for random forest model training using grid
+search method.
+:param dataframe X_tumor: The extracted parameters from the heatmaps of tumor slides.
+:param dataframe X_normal: The extracted parameters from the heatmaps of normal slides.
+:return: the result of grind search</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.model_eva.roc.RF_training_batch.create_folder">
+<code class="sig-prename descclassname">dldp.model_eva.roc.RF_training_batch.</code><code class="sig-name descname">create_folder</code><span class="sig-paren">(</span><em class="sig-param">result_folder</em>, <em class="sig-param">sub_folder</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.model_eva.roc.RF_training_batch.create_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>To create folders</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sub_folder</strong> (<em>str</em>) – the folder to be created.</p></li>
+<li><p><strong>result_folder</strong> – the folder to store the results</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>folder_to_create</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.model_eva.roc.RF_training_batch.evaluate">
+<code class="sig-prename descclassname">dldp.model_eva.roc.RF_training_batch.</code><code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param">model</em>, <em class="sig-param">X_real_test</em>, <em class="sig-param">ground_truth</em>, <em class="sig-param">ref</em>, <em class="sig-param">folder</em>, <em class="sig-param">path_to_save</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.model_eva.roc.RF_training_batch.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used for calculating AUC scores based on the scores predicted by the trained model and the
+ground truth.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>object</em><em>, </em><em>it is to be saved as a pkl file.</em>) – The trained Random Forest model.</p></li>
+<li><p><strong>X_real_test</strong> (<em>dataframe</em>) – the extracted parameters from heatmap for model to predict.</p></li>
+<li><p><strong>ground_truth</strong> (<em>int</em>) – the labels for WSIs. 0 is for normal slides; 1 is for tumor slides.
+The ground truth is extracted from the dataframe of ‘ref’.</p></li>
+<li><p><strong>ref</strong> (<em>dataframe</em>) – A dataframe read in from a CSV file with slide name and its label as ground truth.</p></li>
+<li><p><strong>folder</strong> (<em>string</em>) – The directory stores the extracted parameters.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>AUC score</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>this function also saves the ROC curve as jpg; and a dataframe with all predicted scores for WSIs
+in a CSV file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.model_eva.roc.RF_training_batch.model_save">
+<code class="sig-prename descclassname">dldp.model_eva.roc.RF_training_batch.</code><code class="sig-name descname">model_save</code><span class="sig-paren">(</span><em class="sig-param">model</em>, <em class="sig-param">model_name</em>, <em class="sig-param">path_to_save</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.model_eva.roc.RF_training_batch.model_save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the random forest model with best validation score. The parameters and validation score are also
+printed on the screen.
+:param model: The model is not a single model. The model here is the result from the grind search with all the parameters</p>
+<blockquote>
+<div><p>and models.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the best model.</p>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>the best mode is saved as a pkl file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-dldp.model_eva.roc">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dldp.model_eva.roc" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dldp.patch_extract.html" class="btn btn-neutral float-right" title="dldp.patch_extract package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dldp.model_eva.froc.html" class="btn btn-neutral float-left" title="dldp.model_eva.froc package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Weizhe Li, Weijie Chen
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+patch\_extract\_class module
+============================
+
+.. automodule:: patch_extract_class
+   :members:
+   :undoc-members:
+   :show-inheritance:

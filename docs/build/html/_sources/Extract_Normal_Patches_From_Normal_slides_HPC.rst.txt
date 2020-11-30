@@ -1,0 +1,7 @@
+Extract\_Normal\_Patches\_From\_Normal\_slides\_HPC module
+==========================================================
+
+.. automodule:: Extract_Normal_Patches_From_Normal_slides_HPC
+   :members:
+   :undoc-members:
+   :show-inheritance:

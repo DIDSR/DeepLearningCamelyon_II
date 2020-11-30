@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dldp.model_eva.froc package &mdash; Deep Learning for Digital Pathology 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="dldp.model_eva.roc package" href="dldp.model_eva.roc.html" />
+    <link rel="prev" title="dldp.model_eva package" href="dldp.model_eva.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Deep Learning for Digital Pathology
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="dldp.html">dldp package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="dldp.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dldp.cnn_train.html">dldp.cnn_train package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.heatmap_pred.html">dldp.heatmap_pred package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.image_process.html">dldp.image_process package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="dldp.model_eva.html">dldp.model_eva package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="dldp.model_eva.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dldp.model_eva.html#module-dldp.model_eva">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.patch_extract.html">dldp.patch_extract package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.utils.html">dldp.utils package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.wsi_visu.html">dldp.wsi_visu package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dldp.html#module-dldp">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Deep Learning for Digital Pathology</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="dldp.html">dldp package</a> &raquo;</li>
+        
+          <li><a href="dldp.model_eva.html">dldp.model_eva package</a> &raquo;</li>
+        
+      <li>dldp.model_eva.froc package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/dldp.model_eva.froc.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dldp-model-eva-froc-package">
+<h1>dldp.model_eva.froc package<a class="headerlink" href="#dldp-model-eva-froc-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dldp.model_eva.froc.FROC_Calcu_with_home_made_mask">
+<span id="dldp-model-eva-froc-froc-calcu-with-home-made-mask-module"></span><h2>dldp.model_eva.froc.FROC_Calcu_with_home_made_mask module<a class="headerlink" href="#module-dldp.model_eva.froc.FROC_Calcu_with_home_made_mask" title="Permalink to this headline">¶</a></h2>
+<p>Created on Wed Jan 20 14:09:32 2016
+&#64;author: Babak Ehteshami Bejnordi
+Evaluation code for the Camelyon16 challenge on cancer metastases detection.</p>
+<div class="section" id="description-by-weizhe-li">
+<h3>Description by Weizhe Li:<a class="headerlink" href="#description-by-weizhe-li" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl>
+<dt>The functions:  computeEvaluationMask</dt><dd><p>computeITCList</p>
+<p>These two functions are used to extract the ground
+truth from mask file.</p>
+</dd>
+</dl>
+<p>The function:   readCSVContent</p>
+<blockquote>
+<div><p>The function is used to read the CSV files for each
+WSI image in a result folder</p>
+</div></blockquote>
+<p>The function:   compute_FP_TP_Probs</p>
+<blockquote>
+<div><p>The main function to get FP and TP</p>
+</div></blockquote>
+<dl>
+<dt>The functions:  computeFROC</dt><dd><p>plotFROC</p>
+<p>The functions are used to get FROC data points on
+the FROC curve.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="function">
+<dt id="dldp.model_eva.froc.FROC_Calcu_with_home_made_mask.computeEvaluationMask">
+<code class="sig-prename descclassname">dldp.model_eva.froc.FROC_Calcu_with_home_made_mask.</code><code class="sig-name descname">computeEvaluationMask</code><span class="sig-paren">(</span><em class="sig-param">maskDIR</em>, <em class="sig-param">resolution</em>, <em class="sig-param">level</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.model_eva.froc.FROC_Calcu_with_home_made_mask.computeEvaluationMask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the evaluation mask.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>maskDIR:    the directory of the ground truth mask
+resolution: Pixel resolution of the image at level 0
+level:      The level at which the evaluation mask is made</p>
+</dd>
+<dt>Returns:</dt><dd><p>evaluation_mask</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.model_eva.froc.FROC_Calcu_with_home_made_mask.computeFROC">
+<code class="sig-prename descclassname">dldp.model_eva.froc.FROC_Calcu_with_home_made_mask.</code><code class="sig-name descname">computeFROC</code><span class="sig-paren">(</span><em class="sig-param">FROC_data</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.model_eva.froc.FROC_Calcu_with_home_made_mask.computeFROC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the data required for plotting the FROC curve</p>
+<dl>
+<dt>Args:</dt><dd><p>FROC_data:      Contains the list of TPs, FPs, number of tumors in each image</p>
+</dd>
+<dt>Returns:</dt><dd><p>total_FPs:      A list containing the average number of false positives
+per image for different thresholds</p>
+<p>total_sensitivity:  A list containig overall sensitivity of the system
+for different thresholds</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.model_eva.froc.FROC_Calcu_with_home_made_mask.computeITCList">
+<code class="sig-prename descclassname">dldp.model_eva.froc.FROC_Calcu_with_home_made_mask.</code><code class="sig-name descname">computeITCList</code><span class="sig-paren">(</span><em class="sig-param">evaluation_mask</em>, <em class="sig-param">resolution</em>, <em class="sig-param">level</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.model_eva.froc.FROC_Calcu_with_home_made_mask.computeITCList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the list of labels containing Isolated Tumor Cells (ITC)</p>
+<dl class="simple">
+<dt>Description:</dt><dd><p>A region is considered ITC if its longest diameter is below 200µm.
+As we expanded the annotations by 75µm, the major axis of the object
+should be less than 275µm to be considered as ITC (Each pixel is
+0.243µm*0.243µm in level 0). Therefore the major axis of the object
+in level 5 should be less than 275/(2^5*0.243) = 35.36 pixels.</p>
+</dd>
+<dt>Args:</dt><dd><p>evaluation_mask:    The evaluation mask
+resolution:         Pixel resolution of the image at level 0
+level:              The level at which the evaluation mask was made</p>
+</dd>
+<dt>Returns:</dt><dd><p>Isolated_Tumor_Cells: list of labels containing Isolated Tumor Cells</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.model_eva.froc.FROC_Calcu_with_home_made_mask.compute_FP_TP_Probs">
+<code class="sig-prename descclassname">dldp.model_eva.froc.FROC_Calcu_with_home_made_mask.</code><code class="sig-name descname">compute_FP_TP_Probs</code><span class="sig-paren">(</span><em class="sig-param">Ycorr</em>, <em class="sig-param">Xcorr</em>, <em class="sig-param">Probs</em>, <em class="sig-param">is_tumor</em>, <em class="sig-param">evaluation_mask</em>, <em class="sig-param">Isolated_Tumor_Cells</em>, <em class="sig-param">level</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.model_eva.froc.FROC_Calcu_with_home_made_mask.compute_FP_TP_Probs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates true positive and false positive stats for the analyzed image</p>
+<dl>
+<dt>Args:</dt><dd><p>Probs:      list of the Probabilities of the detected lesions
+Xcorr:      list of X-coordinates of the lesions
+Ycorr:      list of Y-coordinates of the lesions
+is_tumor:   A boolean variable which is one when the case cotains tumor
+evaluation_mask:    The evaluation mask
+Isolated_Tumor_Cells: list of labels containing Isolated Tumor Cells
+level:      The level at which the evaluation mask was made</p>
+</dd>
+<dt>Returns:</dt><dd><p>FP_probs:   A list containing the probabilities of the false positive detections</p>
+<p>TP_probs:   A list containing the probabilities of the True positive detections</p>
+<p>NumberOfTumors: Number of Tumors in the image (excluding Isolate Tumor Cells)</p>
+<p>detection_summary:   A python dictionary object with keys that are the labels
+of the lesions that should be detected (non-ITC tumors) and values
+that contain detection details [confidence score, X-coordinate, Y-coordinate].
+Lesions that are missed by the algorithm have an empty value.</p>
+<p>FP_summary:   A python dictionary object with keys that represent the
+false positive finding number and values that contain detection
+details [confidence score, X-coordinate, Y-coordinate].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.model_eva.froc.FROC_Calcu_with_home_made_mask.plotFROC">
+<code class="sig-prename descclassname">dldp.model_eva.froc.FROC_Calcu_with_home_made_mask.</code><code class="sig-name descname">plotFROC</code><span class="sig-paren">(</span><em class="sig-param">total_FPs</em>, <em class="sig-param">total_sensitivity</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.model_eva.froc.FROC_Calcu_with_home_made_mask.plotFROC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots the FROC curve</p>
+<dl>
+<dt>Args:</dt><dd><p>total_FPs:      A list containing the average number of false positives
+per image for different thresholds</p>
+<p>total_sensitivity:  A list containig overall sensitivity of the system
+for different thresholds</p>
+</dd>
+<dt>Returns:</dt><dd><ul class="simple">
+<li></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.model_eva.froc.FROC_Calcu_with_home_made_mask.readCSVContent">
+<code class="sig-prename descclassname">dldp.model_eva.froc.FROC_Calcu_with_home_made_mask.</code><code class="sig-name descname">readCSVContent</code><span class="sig-paren">(</span><em class="sig-param">csvDIR</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.model_eva.froc.FROC_Calcu_with_home_made_mask.readCSVContent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the data inside CSV file</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>csvDIR:    The directory including all the .csv files containing the results.
+Note that the CSV files should have the same name as the original image</p>
+</dd>
+<dt>Returns:</dt><dd><p>Probs:      list of the Probabilities of the detected lesions
+Xcorr:      list of X-coordinates of the lesions
+Ycorr:      list of Y-coordinates of the lesions</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-dldp.model_eva.froc.FROC_csv_0604">
+<span id="dldp-model-eva-froc-froc-csv-0604-module"></span><h2>dldp.model_eva.froc.FROC_csv_0604 module<a class="headerlink" href="#module-dldp.model_eva.froc.FROC_csv_0604" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="title-lesion-based-prediction">
+<h3>Title: lesion based prediction<a class="headerlink" href="#title-lesion-based-prediction" title="Permalink to this headline">¶</a></h3>
+<p>Created: 10-31-2019
+Python-Version: 3.5</p>
+<div class="section" id="description">
+<h4>Description:<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>This module is used to extract the location (coordinates) and
+probability of individual predicted lesions from heatmaps.</p>
+<dl class="simple">
+<dt>Input:  heatmap (two heatmaps, one is for generating binary image;</dt><dd><p>the other one is to be combined with previous one to get
+probability score.</p>
+</dd>
+</dl>
+<p>Output: CSV file for each slide</p>
+</div></blockquote>
+</div>
+<div class="section" id="note">
+<h4>Note:<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h4>
+<p>This module should be run before the module generating FROC curve.</p>
+<dl class="function">
+<dt id="dldp.model_eva.froc.FROC_csv_0604.get_region_props_binary_fill">
+<code class="sig-prename descclassname">dldp.model_eva.froc.FROC_csv_0604.</code><code class="sig-name descname">get_region_props_binary_fill</code><span class="sig-paren">(</span><em class="sig-param">heatmapbinary</em>, <em class="sig-param">heatmap</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.model_eva.froc.FROC_csv_0604.get_region_props_binary_fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function is to get location and probability of heatmap
+using ndimage.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>heatmapbinary</strong> – the binarized heatmap</p></li>
+<li><p><strong>heatmap</strong> (<em>array</em>) – the original heat_map</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>regionprops</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.model_eva.froc.FROC_csv_0604.get_region_props_kernel">
+<code class="sig-prename descclassname">dldp.model_eva.froc.FROC_csv_0604.</code><code class="sig-name descname">get_region_props_kernel</code><span class="sig-paren">(</span><em class="sig-param">heatmapbinary</em>, <em class="sig-param">heatmap</em>, <em class="sig-param">kernel_size</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.model_eva.froc.FROC_csv_0604.get_region_props_kernel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get properties of heatmap
+:param heatmapbinary: binarized heatmap according to a set threshold.
+:type heatmapbinary: binary array
+:param heatmap: the probability map
+:type heatmap: array
+:return: image property
+:rtype: object, the return from a function “regionprops” from</p>
+<blockquote>
+<div><p>skimage.measure package</p>
+</div></blockquote>
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="module-dldp.model_eva.froc">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dldp.model_eva.froc" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dldp.model_eva.roc.html" class="btn btn-neutral float-right" title="dldp.model_eva.roc package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dldp.model_eva.html" class="btn btn-neutral float-left" title="dldp.model_eva package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Weizhe Li, Weijie Chen
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+Extract\_Normal\_Patches\_From\_Normal\_Slides module
+=====================================================
+
+.. automodule:: Extract_Normal_Patches_From_Normal_Slides
+   :members:
+   :undoc-members:
+   :show-inheritance:

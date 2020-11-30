@@ -1,0 +1,7 @@
+Patch\_Extractor module
+=======================
+
+.. automodule:: Patch_Extractor
+   :members:
+   :undoc-members:
+   :show-inheritance:

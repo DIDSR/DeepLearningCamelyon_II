@@ -1,0 +1,575 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dldp.image_process package &mdash; Deep Learning for Digital Pathology 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="dldp.model_eva package" href="dldp.model_eva.html" />
+    <link rel="prev" title="dldp.heatmap_pred package" href="dldp.heatmap_pred.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Deep Learning for Digital Pathology
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="dldp.html">dldp package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="dldp.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dldp.cnn_train.html">dldp.cnn_train package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.heatmap_pred.html">dldp.heatmap_pred package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">dldp.image_process package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.image_process.color_normalization">dldp.image_process.color_normalization module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.image_process.hard_negative_mining">dldp.image_process.hard_negative_mining module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.image_process.patch_aug">dldp.image_process.patch_aug module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.image_process.patches_near_tumor">dldp.image_process.patches_near_tumor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.image_process">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.model_eva.html">dldp.model_eva package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.patch_extract.html">dldp.patch_extract package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.utils.html">dldp.utils package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.wsi_visu.html">dldp.wsi_visu package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dldp.html#module-dldp">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Deep Learning for Digital Pathology</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="dldp.html">dldp package</a> &raquo;</li>
+        
+      <li>dldp.image_process package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/dldp.image_process.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dldp-image-process-package">
+<h1>dldp.image_process package<a class="headerlink" href="#dldp-image-process-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dldp.image_process.color_normalization">
+<span id="dldp-image-process-color-normalization-module"></span><h2>dldp.image_process.color_normalization module<a class="headerlink" href="#module-dldp.image_process.color_normalization" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="title-color-normalization">
+<h3>Title: color normalization<a class="headerlink" href="#title-color-normalization" title="Permalink to this headline">¶</a></h3>
+<p>Created: 10-31-2019
+Python-Version: 3.5</p>
+<div class="section" id="description">
+<h4>Description:<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h4>
+<p>This module is used to do the color normalization for image patches.</p>
+<p>Input: raw image patches.
+Output: normalized image patches.</p>
+<dl class="simple">
+<dt>Request: this module relys on:</dt><dd><p><a class="reference external" href="https://github.com/wanghao14/Stain_Normalization">https://github.com/wanghao14/Stain_Normalization</a>
+<a class="reference external" href="https://github.com/Peter554/StainTools">https://github.com/Peter554/StainTools</a></p>
+</dd>
+</dl>
+<dl class="function">
+<dt id="dldp.image_process.color_normalization.color_norm">
+<code class="sig-prename descclassname">dldp.image_process.color_normalization.</code><code class="sig-name descname">color_norm</code><span class="sig-paren">(</span><em class="sig-param">image_patch</em>, <em class="sig-param">fit</em>, <em class="sig-param">log_file=False</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.image_process.color_normalization.color_norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>To normalize images based on color_normalizer from function color_nor
+malization.
+:param image_patch: the image to be normalized.
+:type image_patch: array
+:param fit: the object of color_normalizer.
+:type fit: object
+:param log_file: the file to record the failed tasks.
+:type log_file: str</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>img_norm, the normalized images.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.image_process.color_normalization.color_normalization">
+<code class="sig-prename descclassname">dldp.image_process.color_normalization.</code><code class="sig-name descname">color_normalization</code><span class="sig-paren">(</span><em class="sig-param">template_image_path</em>, <em class="sig-param">color_norm_method</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.image_process.color_normalization.color_normalization" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function put all the color normalization methods together.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>template_image_path</strong> (<em>string</em>) – the template image for normalization</p></li>
+<li><p><strong>color_norm_method</strong> (<em>string</em>) – the method for color normalization</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>color_normalizer. It is the initialized object for the
+actual normalization.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.image_process.color_normalization.save_color_norm_patches">
+<code class="sig-prename descclassname">dldp.image_process.color_normalization.</code><code class="sig-name descname">save_color_norm_patches</code><span class="sig-paren">(</span><em class="sig-param">dest_path</em>, <em class="sig-param">source_path</em>, <em class="sig-param">image_patch</em>, <em class="sig-param">img_norm</em>, <em class="sig-param">color_norm_method</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.image_process.color_normalization.save_color_norm_patches" title="Permalink to this definition">¶</a></dt>
+<dd><p>The normalized image patches will be saved in the same folder structure
+as the original image patches.
+:param dest_path: the place to store the normalized image patches.
+:type dest_path:string
+:param source_path: the folder to store the original image patches.
+:type source_path: string
+:param file: the full path of the original image patch.
+:type file: string
+:param img_norm: the normalized image patch.
+:type img_norm: array
+:param color_norm_method: the method used for color normalization
+:type color_norm_method: string
+:return: None</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="module-dldp.image_process.hard_negative_mining">
+<span id="dldp-image-process-hard-negative-mining-module"></span><h2>dldp.image_process.hard_negative_mining module<a class="headerlink" href="#module-dldp.image_process.hard_negative_mining" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="title-hard-negative-mining">
+<h3>Title: hard negative mining<a class="headerlink" href="#title-hard-negative-mining" title="Permalink to this headline">¶</a></h3>
+<p>Created: 10-31-2019
+Python-Version: 3.5</p>
+<div class="section" id="id1">
+<h4>Description:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>This module is used to extract false positive image patches.</p>
+<dl class="function">
+<dt id="dldp.image_process.hard_negative_mining.dim_exp">
+<code class="sig-prename descclassname">dldp.image_process.hard_negative_mining.</code><code class="sig-name descname">dim_exp</code><span class="sig-paren">(</span><em class="sig-param">img</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.image_process.hard_negative_mining.dim_exp" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to expand the dimension of image array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>img</strong> (<em>array</em>) – an image patch</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>img_exp</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.image_process.hard_negative_mining.generate_coordinates">
+<code class="sig-prename descclassname">dldp.image_process.hard_negative_mining.</code><code class="sig-name descname">generate_coordinates</code><span class="sig-paren">(</span><em class="sig-param">all_samples_entry</em>, <em class="sig-param">pred_size=224</em>, <em class="sig-param">image_patch_expansion=False</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.image_process.hard_negative_mining.generate_coordinates" title="Permalink to this definition">¶</a></dt>
+<dd><p>To return the x, y coordinates for patch extraction
+:param all_samples_entry:  one entry from a dataframe
+:type dataframe: dataframe
+:param pred_size: the patch size to be predicted.</p>
+<blockquote>
+<div><p>Here, the pred_size = 224. 224 was also used
+to get the patch index.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>image_patch_expansion</strong> (<em>boolen</em>) – it is True if a bigger image like 448x448
+will be extracted. Otherwise it is false.
+a smaller size (&lt; 224) can never happen.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>xylarge: x, y coordinates</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.image_process.hard_negative_mining.generate_image_patches">
+<code class="sig-prename descclassname">dldp.image_process.hard_negative_mining.</code><code class="sig-name descname">generate_image_patches</code><span class="sig-paren">(</span><em class="sig-param">slide</em>, <em class="sig-param">xylarge</em>, <em class="sig-param">size=224</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.image_process.hard_negative_mining.generate_image_patches" title="Permalink to this definition">¶</a></dt>
+<dd><p>To extract level 0 patches from WSI for prediction
+:param object slide: slide object from OpenSlide
+:param list xylarge: the x, y coordinates for the position where the patch</p>
+<blockquote>
+<div><p>should be extracted</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>size</strong> (<em>integer</em>) – the image patch size</p>
+</dd>
+<dt class="field-even">Return array img</dt>
+<dd class="field-even"><p>a 448x448 patch, only 3 channels (R, G, B)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.image_process.hard_negative_mining.hnm_patch_extr">
+<code class="sig-prename descclassname">dldp.image_process.hard_negative_mining.</code><code class="sig-name descname">hnm_patch_extr</code><span class="sig-paren">(</span><em class="sig-param">hnm_patch_dir</em>, <em class="sig-param">patch_index_path_hnm</em>, <em class="sig-param">threshold</em>, <em class="sig-param">slide_paths</em>, <em class="sig-param">color_norm_method=False</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.image_process.hard_negative_mining.hnm_patch_extr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="dldp.image_process.hard_negative_mining.patch_pred">
+<code class="sig-prename descclassname">dldp.image_process.hard_negative_mining.</code><code class="sig-name descname">patch_pred</code><span class="sig-paren">(</span><em class="sig-param">model</em>, <em class="sig-param">img</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.image_process.hard_negative_mining.patch_pred" title="Permalink to this definition">¶</a></dt>
+<dd><p>get predicted score for an image patch.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>object</em>) – the loaded model</p></li>
+<li><p><strong>img</strong> (<em>list</em>) – the img used for prediction</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>pred</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>this function needs the function dim_exp() to increase
+the dimension of an image patch.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.image_process.hard_negative_mining.slide_level_info">
+<code class="sig-prename descclassname">dldp.image_process.hard_negative_mining.</code><code class="sig-name descname">slide_level_info</code><span class="sig-paren">(</span><em class="sig-param">patch_index_path</em>, <em class="sig-param">slide_paths</em>, <em class="sig-param">ground_truth_paths=False</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.image_process.hard_negative_mining.slide_level_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function is used to do slide level operation and return some key parameters and objects.
+:param int : the index of slide to be predicted
+:param list patch_index_path: the list of all the index files.
+:param list slide_paths: the list of all WSIs to be predicted.
+:param list ground_truth_paths: the list of all ground_truth files that binary file in tif format.
+:return: dataframe all_samples: all the patches in a slide</p>
+<blockquote>
+<div><p>int       n_samples: the number of total patches in a slide
+object    slide: the object from OpenSlide
+string    new_slide_path: the slide path corresponding to index path</p>
+</div></blockquote>
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="module-dldp.image_process.patch_aug">
+<span id="dldp-image-process-patch-aug-module"></span><h2>dldp.image_process.patch_aug module<a class="headerlink" href="#module-dldp.image_process.patch_aug" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="title-patch-aug">
+<h3>Title: patch aug<a class="headerlink" href="#title-patch-aug" title="Permalink to this headline">¶</a></h3>
+<p>Created: 10-31-2019
+Python-Version: 3.5</p>
+<div class="section" id="id2">
+<h4>Description:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>This module includes the functions for image cropping and adding color noises.</p>
+<dl class="function">
+<dt id="dldp.image_process.patch_aug.color_noise_hsv_to_blue">
+<code class="sig-prename descclassname">dldp.image_process.patch_aug.</code><code class="sig-name descname">color_noise_hsv_to_blue</code><span class="sig-paren">(</span><em class="sig-param">image</em>, <em class="sig-param">max=20</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.image_process.patch_aug.color_noise_hsv_to_blue" title="Permalink to this definition">¶</a></dt>
+<dd><p>adding color noise to the direction of blue based on HSV color space</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>array</em>) – the image to be modified</p></li>
+<li><p><strong>max</strong> (<em>int</em>) – the range of color noise</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>img_noise_rgb, a RGB image with color noise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.image_process.patch_aug.color_noise_hsv_to_red">
+<code class="sig-prename descclassname">dldp.image_process.patch_aug.</code><code class="sig-name descname">color_noise_hsv_to_red</code><span class="sig-paren">(</span><em class="sig-param">image</em>, <em class="sig-param">max=20</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.image_process.patch_aug.color_noise_hsv_to_red" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to add color noise to the direction of red
+based on HSV color space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>array</em>) – the original image</p></li>
+<li><p><strong>max</strong> (<em>int</em>) – the range of color noise</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>m_rgb, a RGB image with color noise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.image_process.patch_aug.color_perturb">
+<code class="sig-prename descclassname">dldp.image_process.patch_aug.</code><code class="sig-name descname">color_perturb</code><span class="sig-paren">(</span><em class="sig-param">image</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.image_process.patch_aug.color_perturb" title="Permalink to this definition">¶</a></dt>
+<dd><p>adding color noise and changing the constrast.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>image</strong> (<em>array</em>) – image to be modified</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>image with color perturbation</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.image_process.patch_aug.random_crop2">
+<code class="sig-prename descclassname">dldp.image_process.patch_aug.</code><code class="sig-name descname">random_crop2</code><span class="sig-paren">(</span><em class="sig-param">image</em>, <em class="sig-param">mask</em>, <em class="sig-param">size_origin</em>, <em class="sig-param">crop_size</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.image_process.patch_aug.random_crop2" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get randomly cropped images from original image</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>array</em>) – original image</p></li>
+<li><p><strong>mask</strong> (<em>array</em>) – the corresponding mask image from ground truth</p></li>
+<li><p><strong>size_origin</strong> – the size of original image.</p></li>
+<li><p><strong>crop_size</strong> – the size of image to be cropped.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>cropped image, cropped mask, position information</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="module-dldp.image_process.patches_near_tumor">
+<span id="dldp-image-process-patches-near-tumor-module"></span><h2>dldp.image_process.patches_near_tumor module<a class="headerlink" href="#module-dldp.image_process.patches_near_tumor" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="title-patches-near-tumor">
+<h3>Title: patches near tumor<a class="headerlink" href="#title-patches-near-tumor" title="Permalink to this headline">¶</a></h3>
+<p>Created: 10-31-2019
+Python-Version: 3.5</p>
+<div class="section" id="id3">
+<h4>Description:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>This module is used to extract image patches near the border of tumor
+region.</p>
+<dl class="function">
+<dt id="dldp.image_process.patches_near_tumor.convert_xml_df">
+<code class="sig-prename descclassname">dldp.image_process.patches_near_tumor.</code><code class="sig-name descname">convert_xml_df</code><span class="sig-paren">(</span><em class="sig-param">file</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.image_process.patches_near_tumor.convert_xml_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>To convert xml file to a dataframe with all the coordinates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>string</em>) – xml file with the annotations from pathologists</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>all coordinates</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.image_process.patches_near_tumor.region_crop">
+<code class="sig-prename descclassname">dldp.image_process.patches_near_tumor.</code><code class="sig-name descname">region_crop</code><span class="sig-paren">(</span><em class="sig-param">slide</em>, <em class="sig-param">truth</em>, <em class="sig-param">crop_size</em>, <em class="sig-param">coord</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.image_process.patches_near_tumor.region_crop" title="Permalink to this definition">¶</a></dt>
+<dd><p>To extract all the four regions around a (x, y) coordinate together
+with the corresponding mask files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slide</strong> (<em>object</em>) – the object created by openslide</p></li>
+<li><p><strong>truth</strong> (<em>object</em>) – the object created by openslide</p></li>
+<li><p><strong>crop_size</strong> (<em>list</em>) – the size of image patch to be extracted</p></li>
+<li><p><strong>coord</strong> (<em>list</em>) – a (x, y) coordinate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>four images patches and four mask images with the index</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="module-dldp.image_process">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dldp.image_process" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dldp.model_eva.html" class="btn btn-neutral float-right" title="dldp.model_eva package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dldp.heatmap_pred.html" class="btn btn-neutral float-left" title="dldp.heatmap_pred package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Weizhe Li, Weijie Chen
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

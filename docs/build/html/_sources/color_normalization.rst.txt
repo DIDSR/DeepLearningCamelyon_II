@@ -1,0 +1,7 @@
+color\_normalization module
+===========================
+
+.. automodule:: color_normalization
+   :members:
+   :undoc-members:
+   :show-inheritance:

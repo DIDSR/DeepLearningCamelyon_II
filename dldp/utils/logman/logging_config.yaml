@@ -1,0 +1,131 @@
+# logging_config.yaml
+# The yaml configuration file is used here to have the print out and error message to be shown on screen and written
+# the log files at the same time.
+
+# Default Configuration
+version: 1
+
+# Disable existing loggers is important because other imported modules can overwrite the logger defined here.
+disable_existing_loggers: true
+
+# Filters are used here to filter out messages from other levels for debug and warn logging files.
+filters:
+    # These are callable modules, where we define class for a filter, upon
+    # execution an object for the class will be created by log manager
+    # for example,
+    # filter_name:
+    #       () : filter class path
+    debug_filter:
+        () : logger_management.debugFilter
+    warn_filter:
+        () : logger_management.warnFilter
+
+# Logging formatter definition
+formatters:
+    # for example,
+    # formatter_name:
+    #         format: "fmt_specified using pre-defined variables"
+    standard:
+        format: "%(asctime)s - %(levelname)s - %(name)s - %(lineno)d - %(message)s"
+    error:
+        format: "%(asctime)s - %(levelname)s <PID %(process)d:%(processName)s> %(name)s.%(funcName)s(): %(message)s"
+
+# Logging handlers
+# Console and Error Console belongs to StreamHandler whereas info_file_handler belongs to Rotating File Handler
+# Both console and file handler were used here to display and write the messages.
+handlers:
+    # for example,
+    # handler_name:
+    #       handler_attributes: attribute values
+    console:
+        class: logging.StreamHandler
+        level: DEBUG
+        formatter: standard
+        stream: ext://sys.stdout
+
+    error_console:
+        class: logging.StreamHandler
+        level: ERROR
+        formatter: standard
+        stream: ext://sys.stderr
+
+    info_file_handler:
+        # Class Attribute - Define FileHandler, StreamHandler among other handlers
+        class: logging.handlers.RotatingFileHandler
+        # Handler Level
+        level: INFO
+        # Custom Format defined in formatter block
+        formatter: standard
+        # File Name
+        filename: /tmp/info.log
+        # Max store value - 10 MB
+        maxBytes: 10485760
+        # Backup count - Rollover attribute
+        backupCount: 20
+        # Log format encoding
+        encoding: utf8
+
+    error_file_handler:
+        class: logging.handlers.RotatingFileHandler
+        level: ERROR
+        formatter: error
+        filename: /tmp/errors.log
+        maxBytes: 10485760 # 10MB
+        backupCount: 20
+        encoding: utf8
+
+    debug_file_handler:
+        class: logging.handlers.RotatingFileHandler
+        level: DEBUG
+        formatter: standard
+        filters: [debug_filter]
+        filename: /tmp/debug.log
+        maxBytes: 10485760 # 10MB
+        backupCount: 20
+        encoding: utf8
+
+    critical_file_handler:
+        class: logging.handlers.RotatingFileHandler
+        level: CRITICAL
+        formatter: standard
+        filename: /tmp/critical.log
+        maxBytes: 10485760 # 10MB
+        backupCount: 20
+        encoding: utf8
+
+    warn_file_handler:
+        class: logging.handlers.RotatingFileHandler
+        level: WARN
+        formatter: standard
+        filters: [warn_filter]
+        filename: /tmp/warn.log
+        maxBytes: 10485760 # 10MB
+        backupCount: 20
+        encoding: utf8
+
+
+
+
+# Root Logger Configuration
+root:
+    # Logger Level - Set to NOTSET if you have child loggers with pre-defined levels
+    level: NOTSET
+    # Attach handlers for Root Logger
+    handlers: [console, error_console, info_file_handler, error_file_handler, warn_file_handler, debug_file_handler,
+                critical_file_handler]
+    # Stop propogation from child to parent in Logging hierarchy
+    propagate: no
+
+
+# Module level configuration
+loggers:
+    module1:
+        level: INFO
+        handlers: [info_file_handler, error_file_handler, critical_file_handler, debug_file_handler, warn_file_handler]
+        #handlers: [info_file_handler, error_file_handler, critical_file_handler, debug_file_handler, warn_file_handler]
+        propagate: yes
+
+    #module1.sub_module1:
+    #    level: INFO
+    #    handlers: [info_file_handler, error_file_handler, critical_file_handler, debug_file_handler, warn_file_handler]
+    #    propogate: no

@@ -1,0 +1,480 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dldp.utils package &mdash; Deep Learning for Digital Pathology 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="dldp.wsi_visu package" href="dldp.wsi_visu.html" />
+    <link rel="prev" title="dldp.patch_extract package" href="dldp.patch_extract.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Deep Learning for Digital Pathology
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="dldp.html">dldp package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="dldp.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dldp.cnn_train.html">dldp.cnn_train package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.heatmap_pred.html">dldp.heatmap_pred package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.image_process.html">dldp.image_process package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.model_eva.html">dldp.model_eva package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.patch_extract.html">dldp.patch_extract package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">dldp.utils package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.utils.fileman">dldp.utils.fileman module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.utils.mask_generation_asap">dldp.utils.mask_generation_asap module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.utils.patch_index">dldp.utils.patch_index module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.utils.xml_to_mask">dldp.utils.xml_to_mask module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.utils">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.wsi_visu.html">dldp.wsi_visu package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dldp.html#module-dldp">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Deep Learning for Digital Pathology</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="dldp.html">dldp package</a> &raquo;</li>
+        
+      <li>dldp.utils package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/dldp.utils.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dldp-utils-package">
+<h1>dldp.utils package<a class="headerlink" href="#dldp-utils-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dldp.utils.fileman">
+<span id="dldp-utils-fileman-module"></span><h2>dldp.utils.fileman module<a class="headerlink" href="#module-dldp.utils.fileman" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="title-fileman">
+<h3>Title: fileman<a class="headerlink" href="#title-fileman" title="Permalink to this headline">¶</a></h3>
+<p>Created: 10-31-2019
+Python-Version: 3.5</p>
+<div class="section" id="description">
+<h4>Description:<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h4>
+<p>This module includes functions for folder operations: folder creation,
+listing the files in a folder and its subfolders.</p>
+<dl class="function">
+<dt id="dldp.utils.fileman.creat_folder">
+<code class="sig-prename descclassname">dldp.utils.fileman.</code><code class="sig-name descname">creat_folder</code><span class="sig-paren">(</span><em class="sig-param">new_slide_path</em>, <em class="sig-param">path_for_results</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.utils.fileman.creat_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>To create folder to store the prediction results.
+:param string new_slide_path
+:param string path_for_results</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.utils.fileman.list_file_in_dir">
+<code class="sig-prename descclassname">dldp.utils.fileman.</code><code class="sig-name descname">list_file_in_dir</code><span class="sig-paren">(</span><em class="sig-param">path</em>, <em class="sig-param">file_ext</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.utils.fileman.list_file_in_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function is used to return a list of files in a specific directory and
+its subdirectories.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – the interested directory</p></li>
+<li><p><strong>file_ext</strong> (<em>str</em>) – file extension. for exaple, ‘tif’, ‘jpg’</p></li>
+</ul>
+</dd>
+</dl>
+<p>:return a list of files with full paths</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dldp.utils.fileman.list_file_in_dir_II">
+<code class="sig-prename descclassname">dldp.utils.fileman.</code><code class="sig-name descname">list_file_in_dir_II</code><span class="sig-paren">(</span><em class="sig-param">path</em>, <em class="sig-param">file_ext</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.utils.fileman.list_file_in_dir_II" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function is used to return a list of files in a specific directory and
+its subdirectories.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – the interested directory</p></li>
+<li><p><strong>file_ext</strong> (<em>str</em>) – file extension. for exaple, ‘tif’, ‘jpg’</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list of files with their absolute paths</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="module-dldp.utils.mask_generation_asap">
+<span id="dldp-utils-mask-generation-asap-module"></span><h2>dldp.utils.mask_generation_asap module<a class="headerlink" href="#module-dldp.utils.mask_generation_asap" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="title-mask-generation-asap">
+<h3>Title: mask generation asap<a class="headerlink" href="#title-mask-generation-asap" title="Permalink to this headline">¶</a></h3>
+<p>Created: 10-31-2019
+Python-Version: 3.5</p>
+<div class="section" id="id1">
+<h4>Description:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>This module is used to generate mask files (tiff).</p>
+<p>Input: xml file (annotation)
+Output: mask files (tiff)
+Request: this module relys on:</p>
+<blockquote>
+<div><p>ASAP: <a class="reference external" href="https://github.com/computationalpathologygroup/ASAP">https://github.com/computationalpathologygroup/ASAP</a></p>
+</div></blockquote>
+<dl class="class">
+<dt id="dldp.utils.mask_generation_asap.mask_gen_asap">
+<em class="property">class </em><code class="sig-prename descclassname">dldp.utils.mask_generation_asap.</code><code class="sig-name descname">mask_gen_asap</code><span class="sig-paren">(</span><em class="sig-param">slide_path</em>, <em class="sig-param">anno_path</em>, <em class="sig-param">mask_path</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.utils.mask_generation_asap.mask_gen_asap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The class is used to generate training mask files from xml files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slide_path</strong> (<em>str</em>) – the folder storing slides</p></li>
+<li><p><strong>anno_path</strong> (<em>str</em>) – the folder storing annotation files (xml)</p></li>
+<li><p><strong>mask_path</strong> (<em>str</em>) – the destination folder for the mask files</p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>slide_paths</strong> (<em>list</em>) – all the paths of slides</p></li>
+<li><p><strong>anno_paths</strong> (<em>list</em>) – all the paths of xml files</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="dldp.utils.mask_generation_asap.mask_gen_asap.batch_gen">
+<code class="sig-name descname">batch_gen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dldp.utils.mask_generation_asap.mask_gen_asap.batch_gen" title="Permalink to this definition">¶</a></dt>
+<dd><p>To generate all the mask files for the slides in a folder</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dldp.utils.mask_generation_asap.mask_gen_asap.mask_gen">
+<code class="sig-name descname">mask_gen</code><span class="sig-paren">(</span><em class="sig-param">slide_file</em>, <em class="sig-param">xml_file</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.utils.mask_generation_asap.mask_gen_asap.mask_gen" title="Permalink to this definition">¶</a></dt>
+<dd><p>To generate mask file for one slide, and save the mask file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slide_file</strong> (<em>str</em>) – the path of a WSI image</p></li>
+<li><p><strong>xml_file</strong> (<em>str</em>) – the path of a xml file for the annotation of WSI image</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the path of the mask file</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dldp.utils.mask_generation_asap.mask_gen_asap.reader">
+<code class="sig-name descname">reader</code><em class="property"> = &lt;multiresolutionimageinterface.MultiResolutionImageReader; proxy of &lt;Swig Object of type 'MultiResolutionImageReader *'&gt; &gt;</em><a class="headerlink" href="#dldp.utils.mask_generation_asap.mask_gen_asap.reader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="module-dldp.utils.patch_index">
+<span id="dldp-utils-patch-index-module"></span><h2>dldp.utils.patch_index module<a class="headerlink" href="#module-dldp.utils.patch_index" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="title-patch-index">
+<h3>Title: patch index<a class="headerlink" href="#title-patch-index" title="Permalink to this headline">¶</a></h3>
+<p>Created: 10-31-2019
+Python-Version: 3.5</p>
+<div class="section" id="id2">
+<h4>Description:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>This module is used to generate the x, y coordinates of all the image patches in a WSI.
+If an image patch is outside of tissue region, it will be labeled as 0, and will be
+assigned to 0 during prediction.</p>
+<p>This module is required by hard negative mining and heatmap prediction.</p>
+<p>Input: WSI
+Output: a dataframe includes three columns:</p>
+<blockquote>
+<div><p>tile_loc: coordinates
+is_tissue: if an image patch is a tissue patch
+slide_path: the path of the WSI</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Request: this module relys on:</dt><dd><p>OpenSlide: <a class="reference external" href="https://github.com/openslide/openslide-python">https://github.com/openslide/openslide-python</a></p>
+</dd>
+</dl>
+<dl class="function">
+<dt id="dldp.utils.patch_index.find_patches_from_slide">
+<code class="sig-prename descclassname">dldp.utils.patch_index.</code><code class="sig-name descname">find_patches_from_slide</code><span class="sig-paren">(</span><em class="sig-param">slide_path</em>, <em class="sig-param">result_folder</em>, <em class="sig-param">filter_non_tissue=True</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.utils.patch_index.find_patches_from_slide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dataframe of all patches in slide</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slide_path</strong> (<em>string</em>) – the path for slide file</p></li>
+<li><p><strong>result_folder</strong> (<em>string</em>) – the place to save the results</p></li>
+<li><p><strong>filter_non_tissue</strong> (<em>boolean</em>) – if get rid of the no-tissue region</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a dataframe with the columns:
+slide_path: path of slide
+is_tissue: sample contains tissue
+is_tumor: truth status of sample
+tile_loc: coordinates of samples in slide</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="module-dldp.utils.xml_to_mask">
+<span id="dldp-utils-xml-to-mask-module"></span><h2>dldp.utils.xml_to_mask module<a class="headerlink" href="#module-dldp.utils.xml_to_mask" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="title-convert-xml-to-binary-mask">
+<h3>Title: convert XML to binary mask<a class="headerlink" href="#title-convert-xml-to-binary-mask" title="Permalink to this headline">¶</a></h3>
+<p>Created: 10-31-2019
+Python-Version: 3.5</p>
+<div class="section" id="id3">
+<h4>Description:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>This module is used to generate binary mask files from the annotations (XML files).
+This module is needed for generate mask files for test WSIs because ASAP will show
+errors for mask generation of certain test WSIs.</p>
+</div>
+<div class="section" id="note">
+<h4>Note:<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h4>
+<p>If you need more information about how ElementTree package handle XML file,
+please follow the link:
+#https://docs.python.org/3/library/xml.etree.elementtree.html</p>
+<dl class="class">
+<dt id="dldp.utils.xml_to_mask.mask_generator">
+<em class="property">class </em><code class="sig-prename descclassname">dldp.utils.xml_to_mask.</code><code class="sig-name descname">mask_generator</code><span class="sig-paren">(</span><em class="sig-param">xml_file</em>, <em class="sig-param">level</em>, <em class="sig-param">dims</em>, <em class="sig-param">result_folder</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.utils.xml_to_mask.mask_generator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="dldp.utils.xml_to_mask.mask_generator.convert_xml_df">
+<code class="sig-name descname">convert_xml_df</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dldp.utils.xml_to_mask.mask_generator.convert_xml_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>To convert a xml file to a series of dataframes in a tuple.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>df_xml: x, y coordinates</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dldp.utils.xml_to_mask.mask_generator.mask_gen">
+<code class="sig-name descname">mask_gen</code><span class="sig-paren">(</span><em class="sig-param">final_annotations</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.utils.xml_to_mask.mask_generator.mask_gen" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate a binary mask file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>final_list</strong> (<em>list</em>) – the down-sampled annotation</p></li>
+<li><p><strong>result_folder</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+<p>:type result_folder:str
+:return: mask file
+:rtype: tif file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dldp.utils.xml_to_mask.mask_generator.remove_dup">
+<code class="sig-name descname">remove_dup</code><span class="sig-paren">(</span><em class="sig-param">annotations</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.utils.xml_to_mask.mask_generator.remove_dup" title="Permalink to this definition">¶</a></dt>
+<dd><p>remove the duplicated coordinates due to the down_sampling
+:param duplicate:
+:return: list with no duplicates
+:rtype: list</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="module-dldp.utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dldp.utils" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dldp.wsi_visu.html" class="btn btn-neutral float-right" title="dldp.wsi_visu package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dldp.patch_extract.html" class="btn btn-neutral float-left" title="dldp.patch_extract package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Weizhe Li, Weijie Chen
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

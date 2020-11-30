@@ -1,0 +1,7 @@
+task\_id\_makeup module
+=======================
+
+.. automodule:: task_id_makeup
+   :members:
+   :undoc-members:
+   :show-inheritance:

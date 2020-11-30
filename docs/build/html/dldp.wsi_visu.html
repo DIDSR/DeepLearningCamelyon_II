@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dldp.wsi_visu package &mdash; Deep Learning for Digital Pathology 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="dldp.utils package" href="dldp.utils.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Deep Learning for Digital Pathology
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="dldp.html">dldp package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="dldp.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dldp.cnn_train.html">dldp.cnn_train package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.heatmap_pred.html">dldp.heatmap_pred package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.image_process.html">dldp.image_process package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.model_eva.html">dldp.model_eva package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.patch_extract.html">dldp.patch_extract package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dldp.utils.html">dldp.utils package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">dldp.wsi_visu package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.wsi_visu.WSI_viewer">dldp.wsi_visu.WSI_viewer module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-dldp.wsi_visu">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dldp.html#module-dldp">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Deep Learning for Digital Pathology</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="dldp.html">dldp package</a> &raquo;</li>
+        
+      <li>dldp.wsi_visu package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/dldp.wsi_visu.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dldp-wsi-visu-package">
+<h1>dldp.wsi_visu package<a class="headerlink" href="#dldp-wsi-visu-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dldp.wsi_visu.WSI_viewer">
+<span id="dldp-wsi-visu-wsi-viewer-module"></span><h2>dldp.wsi_visu.WSI_viewer module<a class="headerlink" href="#module-dldp.wsi_visu.WSI_viewer" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="title-wsi-visualization">
+<h3>Title: wsi visualization<a class="headerlink" href="#title-wsi-visualization" title="Permalink to this headline">¶</a></h3>
+<p>Created: 10-31-2019
+Python-Version: 3.5</p>
+<div class="section" id="description">
+<h4>Description:<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h4>
+<p>This module is used to view the WSI, its mask and heatmap overlay.</p>
+</div>
+<div class="section" id="note">
+<h4>Note:<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h4>
+<p>The level of display resolution depends on the memory of the workstation used.
+The default level is 5 (32x downsampled from the level 0 WSI image).</p>
+<dl class="class">
+<dt id="dldp.wsi_visu.WSI_viewer.WSI_viewer">
+<em class="property">class </em><code class="sig-prename descclassname">dldp.wsi_visu.WSI_viewer.</code><code class="sig-name descname">WSI_viewer</code><span class="sig-paren">(</span><em class="sig-param">WSI_path</em>, <em class="sig-param">Xml_path</em>, <em class="sig-param">Dimension_path</em>, <em class="sig-param">Mask_truth_path=''</em>, <em class="sig-param">Heatmap_path=''</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.wsi_visu.WSI_viewer.WSI_viewer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The wsi_viewer class is used to display the wsi image, ground truth,
+predicted heatmap and their overlays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>WSI_path</strong> (<em>str</em>) – the path of a WSI image</p></li>
+<li><p><strong>Xml_path</strong> (<em>str</em>) – the path of a xml file, the ground truth (outline the
+tumor regions) of a WSI image</p></li>
+<li><p><strong>Dimension_path</strong> (<em>str</em>) – the path of npy file I generated to store the
+dimensions of WSI image and tissue region.</p></li>
+<li><p><strong>Mask_truth_path</strong> (<em>str</em>) – the path of generated binary mask files from xml
+files.</p></li>
+<li><p><strong>Heatmap_path</strong> – the path of predicted heatmap showing the scores of
+possible tumor region.</p></li>
+</ul>
+</dd>
+</dl>
+<p>:type Heatmap_path</p>
+<dl class="simple">
+<dt>ivar: contours of tissue region, tumor region (from ground truth), and</dt><dd><p>heatmap on WSI image.</p>
+</dd>
+</dl>
+<p>vartype: png</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>create an instance of the object</dt><dd><p>for example, viewer = WSI_viewer()</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>display the combined contours of tissue region and tumor</dt><dd><p>region viewer.combined_contour_on_wsi()</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>display heatmap over contours of tumor region</dt><dd><p>viewer.display_heatmap()</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>generate binary mask flies:</dt><dd><p>viewer.mask_generation()</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<dl class="attribute">
+<dt id="dldp.wsi_visu.WSI_viewer.WSI_viewer.PPI">
+<code class="sig-name descname">PPI</code><em class="property"> = 150</em><a class="headerlink" href="#dldp.wsi_visu.WSI_viewer.WSI_viewer.PPI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dldp.wsi_visu.WSI_viewer.WSI_viewer.WSI_path">
+<em class="property">property </em><code class="sig-name descname">WSI_path</code><a class="headerlink" href="#dldp.wsi_visu.WSI_viewer.WSI_viewer.WSI_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dldp.wsi_visu.WSI_viewer.WSI_viewer.combined_contour_on_wsi">
+<code class="sig-name descname">combined_contour_on_wsi</code><span class="sig-paren">(</span><em class="sig-param">output_path</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.wsi_visu.WSI_viewer.WSI_viewer.combined_contour_on_wsi" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dldp.wsi_visu.WSI_viewer.WSI_viewer.display_heatmap">
+<code class="sig-name descname">display_heatmap</code><span class="sig-paren">(</span><em class="sig-param">threshold</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.wsi_visu.WSI_viewer.WSI_viewer.display_heatmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to display the heat_map over WSI image
+input: directory of WSI image, directory of heat_map, directory of dimensions, threshhold
+output: orginal WSI image, heat_map, heat_map over WSI image,</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dldp.wsi_visu.WSI_viewer.WSI_viewer.mask_generation">
+<code class="sig-name descname">mask_generation</code><span class="sig-paren">(</span><em class="sig-param">output_path</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.wsi_visu.WSI_viewer.WSI_viewer.mask_generation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dldp.wsi_visu.WSI_viewer.WSI_viewer.slide_level">
+<code class="sig-name descname">slide_level</code><em class="property"> = 5</em><a class="headerlink" href="#dldp.wsi_visu.WSI_viewer.WSI_viewer.slide_level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dldp.wsi_visu.WSI_viewer.WSI_viewer.tissue_contour_on_wsi">
+<code class="sig-name descname">tissue_contour_on_wsi</code><span class="sig-paren">(</span><em class="sig-param">output_path</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.wsi_visu.WSI_viewer.WSI_viewer.tissue_contour_on_wsi" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dldp.wsi_visu.WSI_viewer.WSI_viewer.truth_contour_on_wsi">
+<code class="sig-name descname">truth_contour_on_wsi</code><span class="sig-paren">(</span><em class="sig-param">output_path</em><span class="sig-paren">)</span><a class="headerlink" href="#dldp.wsi_visu.WSI_viewer.WSI_viewer.truth_contour_on_wsi" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="module-dldp.wsi_visu">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dldp.wsi_visu" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="dldp.utils.html" class="btn btn-neutral float-left" title="dldp.utils package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Weizhe Li, Weijie Chen
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

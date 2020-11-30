@@ -1,0 +1,7 @@
+patch\_aug module
+=================
+
+.. automodule:: patch_aug
+   :members:
+   :undoc-members:
+   :show-inheritance:

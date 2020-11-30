@@ -1,0 +1,7 @@
+hard\_negative\_mining module
+=============================
+
+.. automodule:: hard_negative_mining
+   :members:
+   :undoc-members:
+   :show-inheritance:

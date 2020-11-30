@@ -1,0 +1,7 @@
+CNN\_Architecture module
+========================
+
+.. automodule:: CNN_Architecture
+   :members:
+   :undoc-members:
+   :show-inheritance:
